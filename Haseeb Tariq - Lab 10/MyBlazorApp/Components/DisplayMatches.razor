@@ -1,0 +1,91 @@
+@using Microsoft.AspNetCore.Components
+@using MyBlazorApp.Models
+@inherits ComponentBase
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Teams</th>
+                <th>Venue</th>
+                <th>Date & Time</th>
+                <th>Status</th>
+                <th>Score</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Matches.Any())
+            {
+                @foreach (var match in Matches)
+                {
+                    <tr>
+                        <td>@GetTeamName(match.Team1Id) vs @GetTeamName(match.Team2Id)</td>
+                        <td>@match.Venue</td>
+                        <td>@match.ScheduledDateTime.ToString("dd MMM yyyy, HH:mm")</td>
+                        <td class="@GetStatusClass(match.Status)">@match.Status</td>
+                        <td>
+                            @if (match.Status == MatchStatus.Live || match.Status == MatchStatus.Completed)
+                            {
+                                <div>
+                                    @GetTeamName(match.Team1Id): @match.Team1Score/@match.Team1Wickets
+                                    (@match.Team1Overs.@(match.Team1Balls ?? 0))
+                                </div>
+                                @if (match.Team2Score.HasValue)
+                                {
+                                    <div>
+                                        @GetTeamName(match.Team2Id): @match.Team2Score/@match.Team2Wickets
+                                        (@match.Team2Overs.@(match.Team2Balls ?? 0))
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-primary" @onclick="() => OnEditMatch.InvokeAsync(match)">
+                                @(match.Status == MatchStatus.Scheduled ? "Edit" : "Update Score")
+                            </button>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" class="text-center">No matches found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    [Parameter]
+    public List<Match> Matches { get; set; } = new();
+
+    [Parameter]
+    public List<Team> Teams { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<Match> OnEditMatch { get; set; }
+
+    protected string GetTeamName(int teamId)
+    {
+        return Teams.FirstOrDefault(t => t.Id == teamId)?.Name ?? "Unknown Team";
+    }
+
+    protected string GetStatusClass(MatchStatus status)
+    {
+        return status switch
+        {
+            MatchStatus.Live => "text-success",
+            MatchStatus.Completed => "text-primary",
+            MatchStatus.Cancelled => "text-danger",
+            MatchStatus.Postponed => "text-warning",
+            _ => ""
+        };
+    }
+} 

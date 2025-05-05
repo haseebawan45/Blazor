@@ -1,0 +1,308 @@
+@page "/matches"
+@using MyBlazorApp.Models
+@using MyBlazorApp.Services
+@inject CricketDataService DataService
+
+<h3>Cricket Matches</h3>
+
+<div class="row mb-3">
+    <div class="col">
+        <button class="btn btn-primary" @onclick="() => showAddMatch = true">Schedule New Match</button>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link @(currentTab == "upcoming" ? "active" : "")" @onclick="@(() => currentTab = "upcoming")" href="javascript:void(0)">Upcoming</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(currentTab == "live" ? "active" : "")" @onclick="@(() => currentTab = "live")" href="javascript:void(0)">Live</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(currentTab == "past" ? "active" : "")" @onclick="@(() => currentTab = "past")" href="javascript:void(0)">Past</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(currentTab == "all" ? "active" : "")" @onclick="@(() => currentTab = "all")" href="javascript:void(0)">All</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@if (currentTab == "upcoming")
+{
+    <MyBlazorApp.Components.DisplayMatches Matches="upcomingMatches" Teams="teams" OnEditMatch="EditMatch" />
+}
+else if (currentTab == "live")
+{
+    <MyBlazorApp.Components.DisplayMatches Matches="liveMatches" Teams="teams" OnEditMatch="EditMatch" />
+}
+else if (currentTab == "past")
+{
+    <MyBlazorApp.Components.DisplayMatches Matches="pastMatches" Teams="teams" OnEditMatch="EditMatch" />
+}
+else
+{
+    <MyBlazorApp.Components.DisplayMatches Matches="allMatches" Teams="teams" OnEditMatch="EditMatch" />
+}
+
+@if (showAddMatch)
+{
+    <div class="modal fade show" style="display: block;" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Schedule New Match</h5>
+                    <button type="button" class="btn-close" @onclick="() => showAddMatch = false"></button>
+                </div>
+                <div class="modal-body">
+                    <EditForm Model="@newMatch" OnValidSubmit="@HandleValidSubmit">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="form-group mb-3">
+                            <label for="team1">Team 1:</label>
+                            <select id="team1" @bind="newMatch.Team1Id" class="form-control">
+                                <option value="0">-- Select Team --</option>
+                                @foreach (var team in teams)
+                                {
+                                    <option value="@team.Id">@team.Name</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="team2">Team 2:</label>
+                            <select id="team2" @bind="newMatch.Team2Id" class="form-control">
+                                <option value="0">-- Select Team --</option>
+                                @foreach (var team in teams)
+                                {
+                                    if (team.Id != newMatch.Team1Id)
+                                    {
+                                        <option value="@team.Id">@team.Name</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="venue">Venue:</label>
+                            <input id="venue" @bind="newMatch.Venue" class="form-control" />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="date">Date and Time:</label>
+                            <input id="date" type="datetime-local" @bind="newMatch.ScheduledDateTime" class="form-control" />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Schedule Match</button>
+                        <button type="button" class="btn btn-secondary" @onclick="() => showAddMatch = false">Cancel</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+}
+
+@if (matchToEdit != null)
+{
+    <div class="modal fade show" style="display: block;" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Match</h5>
+                    <button type="button" class="btn-close" @onclick="() => matchToEdit = null"></button>
+                </div>
+                <div class="modal-body">
+                    <EditForm Model="@matchToEdit" OnValidSubmit="@HandleEditSubmit">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        @if (matchToEdit.Status == MatchStatus.Scheduled)
+                        {
+                            <div class="form-group mb-3">
+                                <label for="editTeam1">Team 1:</label>
+                                <select id="editTeam1" @bind="matchToEdit.Team1Id" class="form-control">
+                                    @foreach (var team in teams)
+                                    {
+                                        <option value="@team.Id">@team.Name</option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="editTeam2">Team 2:</label>
+                                <select id="editTeam2" @bind="matchToEdit.Team2Id" class="form-control">
+                                    @foreach (var team in teams)
+                                    {
+                                        if (team.Id != matchToEdit.Team1Id)
+                                        {
+                                            <option value="@team.Id">@team.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="editVenue">Venue:</label>
+                                <input id="editVenue" @bind="matchToEdit.Venue" class="form-control" />
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="editDate">Date and Time:</label>
+                                <input id="editDate" type="datetime-local" @bind="matchToEdit.ScheduledDateTime" class="form-control" />
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5>@GetTeamName(matchToEdit.Team1Id)</h5>
+                                    <div class="form-group mb-3">
+                                        <label>Score:</label>
+                                        <input type="number" @bind="matchToEdit.Team1Score" class="form-control" />
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label>Wickets:</label>
+                                        <input type="number" @bind="matchToEdit.Team1Wickets" class="form-control" min="0" max="10" />
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label>Overs:</label>
+                                        <input type="number" @bind="matchToEdit.Team1Overs" class="form-control" min="0" max="50" />
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label>Balls:</label>
+                                        <input type="number" @bind="matchToEdit.Team1Balls" class="form-control" min="0" max="5" />
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <h5>@GetTeamName(matchToEdit.Team2Id)</h5>
+                                    <div class="form-group mb-3">
+                                        <label>Score:</label>
+                                        <input type="number" @bind="matchToEdit.Team2Score" class="form-control" />
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label>Wickets:</label>
+                                        <input type="number" @bind="matchToEdit.Team2Wickets" class="form-control" min="0" max="10" />
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label>Overs:</label>
+                                        <input type="number" @bind="matchToEdit.Team2Overs" class="form-control" min="0" max="50" />
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label>Balls:</label>
+                                        <input type="number" @bind="matchToEdit.Team2Balls" class="form-control" min="0" max="5" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label>Match Status:</label>
+                                <select @bind="matchToEdit.Status" class="form-control">
+                                    <option value="@MatchStatus.Live">Live</option>
+                                    <option value="@MatchStatus.Completed">Completed</option>
+                                    <option value="@MatchStatus.Cancelled">Cancelled</option>
+                                    <option value="@MatchStatus.Postponed">Postponed</option>
+                                </select>
+                            </div>
+
+                            @if (matchToEdit.Status == MatchStatus.Completed)
+                            {
+                                <div class="form-group mb-3">
+                                    <label>Winning Team:</label>
+                                    <select @bind="matchToEdit.WinningTeamId" class="form-control">
+                                        <option value="">-- Select Winner --</option>
+                                        <option value="@matchToEdit.Team1Id">@GetTeamName(matchToEdit.Team1Id)</option>
+                                        <option value="@matchToEdit.Team2Id">@GetTeamName(matchToEdit.Team2Id)</option>
+                                    </select>
+                                </div>
+                            }
+                        }
+
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-secondary" @onclick="() => matchToEdit = null">Cancel</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+}
+
+@code {
+    private List<Match> allMatches = new();
+    private List<Match> upcomingMatches = new();
+    private List<Match> liveMatches = new();
+    private List<Match> pastMatches = new();
+    private List<Team> teams = new();
+    private string currentTab = "upcoming";
+    private bool showAddMatch = false;
+    private Match newMatch = new() { ScheduledDateTime = DateTime.Now.AddDays(1) };
+    private Match? matchToEdit;
+
+    protected override void OnInitialized()
+    {
+        LoadData();
+    }
+
+    private void LoadData()
+    {
+        allMatches = DataService.GetAllMatches();
+        upcomingMatches = DataService.GetUpcomingMatches();
+        liveMatches = DataService.GetLiveMatches();
+        pastMatches = DataService.GetPastMatches();
+        teams = DataService.GetAllTeams();
+    }
+
+    private void HandleValidSubmit()
+    {
+        if (newMatch.Team1Id == 0 || newMatch.Team2Id == 0 || string.IsNullOrWhiteSpace(newMatch.Venue))
+        {
+            return;
+        }
+
+        newMatch.Status = MatchStatus.Scheduled;
+        DataService.AddMatch(newMatch);
+        showAddMatch = false;
+        newMatch = new Match { ScheduledDateTime = DateTime.Now.AddDays(1) };
+        LoadData();
+    }
+
+    private void EditMatch(Match match)
+    {
+        matchToEdit = new Match
+        {
+            Id = match.Id,
+            Team1Id = match.Team1Id,
+            Team2Id = match.Team2Id,
+            Venue = match.Venue,
+            ScheduledDateTime = match.ScheduledDateTime,
+            Status = match.Status,
+            Team1Score = match.Team1Score,
+            Team1Wickets = match.Team1Wickets,
+            Team1Overs = match.Team1Overs,
+            Team1Balls = match.Team1Balls,
+            Team2Score = match.Team2Score,
+            Team2Wickets = match.Team2Wickets,
+            Team2Overs = match.Team2Overs,
+            Team2Balls = match.Team2Balls,
+            WinningTeamId = match.WinningTeamId
+        };
+    }
+
+    private void HandleEditSubmit()
+    {
+        if (matchToEdit == null) return;
+        
+        DataService.UpdateMatch(matchToEdit);
+        matchToEdit = null;
+        LoadData();
+    }
+
+    private string GetTeamName(int teamId)
+    {
+        return teams.FirstOrDefault(t => t.Id == teamId)?.Name ?? "Unknown Team";
+    }
+} 

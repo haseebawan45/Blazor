@@ -1,0 +1,154 @@
+@page "/standings"
+@using MyBlazorApp.Models
+@using MyBlazorApp.Services
+@inject CricketDataService DataService
+
+<h3>Tournament Standings</h3>
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Points Table</h5>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Rank</th>
+                        <th>Team</th>
+                        <th>Matches</th>
+                        <th>Won</th>
+                        <th>Lost</th>
+                        <th>Tied</th>
+                        <th>Points</th>
+                        <th>NRR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int rank = 1;
+                    }
+                    @foreach (var team in standings)
+                    {
+                        <tr class="@(rank <= 4 ? "table-success" : "")">
+                            <td>@(rank++)</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    @if (!string.IsNullOrEmpty(team.LogoUrl))
+                                    {
+                                        <img src="@team.LogoUrl" alt="@team.Name" style="width: 30px; height: 30px; margin-right: 10px;" />
+                                    }
+                                    @team.Name
+                                </div>
+                            </td>
+                            <td>@team.MatchesPlayed</td>
+                            <td>@team.MatchesWon</td>
+                            <td>@team.MatchesLost</td>
+                            <td>@team.MatchesTied</td>
+                            <td><strong>@team.Points</strong></td>
+                            <td>@team.NetRunRate.ToString("F3")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header bg-info text-white">
+        <h5 class="mb-0">Recent Results</h5>
+    </div>
+    <div class="card-body">
+        <div class="list-group">
+            @foreach (var match in recentMatches)
+            {
+                <div class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6>@GetTeamName(match.Team1Id) vs @GetTeamName(match.Team2Id)</h6>
+                            <small>@match.Venue - @match.ScheduledDateTime.ToString("dd MMM yyyy")</small>
+                        </div>
+                        <div>
+                            @if (match.WinningTeamId.HasValue)
+                            {
+                                <span class="badge bg-success">@GetTeamName(match.WinningTeamId.Value) won</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Match Tied</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <div>@GetTeamName(match.Team1Id): @match.Team1Score/@match.Team1Wickets (@match.Team1Overs.@(match.Team1Balls ?? 0))</div>
+                        <div>@GetTeamName(match.Team2Id): @match.Team2Score/@match.Team2Wickets (@match.Team2Overs.@(match.Team2Balls ?? 0))</div>
+                    </div>
+                </div>
+            }
+            
+            @if (!recentMatches.Any())
+            {
+                <div class="list-group-item">
+                    <p class="mb-0">No recent match results available.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header bg-warning">
+        <h5 class="mb-0">Upcoming Matches</h5>
+    </div>
+    <div class="card-body">
+        <div class="list-group">
+            @foreach (var match in upcomingMatches)
+            {
+                <div class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6>@GetTeamName(match.Team1Id) vs @GetTeamName(match.Team2Id)</h6>
+                            <small>@match.Venue</small>
+                        </div>
+                        <div>
+                            <span class="badge bg-primary">@match.ScheduledDateTime.ToString("dd MMM, HH:mm")</span>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+            @if (!upcomingMatches.Any())
+            {
+                <div class="list-group-item">
+                    <p class="mb-0">No upcoming matches scheduled.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<Team> standings = new();
+    private List<Match> recentMatches = new();
+    private List<Match> upcomingMatches = new();
+    private List<Team> teams = new();
+
+    protected override void OnInitialized()
+    {
+        LoadData();
+    }
+
+    private void LoadData()
+    {
+        standings = DataService.GetStandings();
+        recentMatches = DataService.GetPastMatches().Take(5).ToList();
+        upcomingMatches = DataService.GetUpcomingMatches().Take(5).ToList();
+        teams = DataService.GetAllTeams();
+    }
+
+    private string GetTeamName(int teamId)
+    {
+        return teams.FirstOrDefault(t => t.Id == teamId)?.Name ?? "Unknown Team";
+    }
+} 

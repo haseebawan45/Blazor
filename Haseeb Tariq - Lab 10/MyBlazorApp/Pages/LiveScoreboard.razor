@@ -1,0 +1,214 @@
+@page "/livescoreboard"
+@using MyBlazorApp.Models
+@using MyBlazorApp.Services
+@inject CricketDataService DataService
+@implements IDisposable
+
+<h3>Live Scoreboard</h3>
+
+@if (liveMatches.Any())
+{
+    <div class="row">
+        @foreach (var match in liveMatches)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">LIVE: @GetTeamName(match.Team1Id) vs @GetTeamName(match.Team2Id)</h5>
+                        <small>@match.Venue</small>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <h5>@GetTeamName(match.Team1Id)</h5>
+                                <h3 class="mb-0">@match.Team1Score/@match.Team1Wickets</h3>
+                                <p>Overs: @match.Team1Overs.@(match.Team1Balls ?? 0)</p>
+                            </div>
+                            @if (match.Team2Score.HasValue)
+                            {
+                                <div class="col-6">
+                                    <h5>@GetTeamName(match.Team2Id)</h5>
+                                    <h3 class="mb-0">@match.Team2Score/@match.Team2Wickets</h3>
+                                    <p>Overs: @match.Team2Overs.@(match.Team2Balls ?? 0)</p>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-6">
+                                    <h5>@GetTeamName(match.Team2Id)</h5>
+                                    <h3 class="mb-0">Yet to bat</h3>
+                                </div>
+                            }
+                        </div>
+                        
+                        <div class="text-center">
+                            <button class="btn btn-primary" @onclick="() => NavigateToUpdateScore(match)">Update Score</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        <p>No live matches at the moment.</p>
+    </div>
+}
+
+@if (showUpdateScoreModal && selectedMatch != null)
+{
+    <div class="modal fade show" style="display: block;" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Score</h5>
+                    <button type="button" class="btn-close" @onclick="() => showUpdateScoreModal = false"></button>
+                </div>
+                <div class="modal-body">
+                    <EditForm Model="@selectedMatch" OnValidSubmit="@HandleSubmit">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="row">
+                            <div class="col-6">
+                                <h5>@GetTeamName(selectedMatch.Team1Id)</h5>
+                                <div class="form-group mb-3">
+                                    <label>Score:</label>
+                                    <input type="number" @bind="selectedMatch.Team1Score" class="form-control" min="0" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label>Wickets:</label>
+                                    <input type="number" @bind="selectedMatch.Team1Wickets" class="form-control" min="0" max="10" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label>Overs:</label>
+                                    <input type="number" @bind="selectedMatch.Team1Overs" class="form-control" min="0" max="50" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label>Balls:</label>
+                                    <input type="number" @bind="selectedMatch.Team1Balls" class="form-control" min="0" max="5" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <h5>@GetTeamName(selectedMatch.Team2Id)</h5>
+                                <div class="form-group mb-3">
+                                    <label>Score:</label>
+                                    <input type="number" @bind="selectedMatch.Team2Score" class="form-control" min="0" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label>Wickets:</label>
+                                    <input type="number" @bind="selectedMatch.Team2Wickets" class="form-control" min="0" max="10" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label>Overs:</label>
+                                    <input type="number" @bind="selectedMatch.Team2Overs" class="form-control" min="0" max="50" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label>Balls:</label>
+                                    <input type="number" @bind="selectedMatch.Team2Balls" class="form-control" min="0" max="5" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label>Match Status:</label>
+                            <select @bind="selectedMatch.Status" class="form-control">
+                                <option value="@MatchStatus.Live">Live</option>
+                                <option value="@MatchStatus.Completed">Completed</option>
+                            </select>
+                        </div>
+
+                        @if (selectedMatch.Status == MatchStatus.Completed)
+                        {
+                            <div class="form-group mb-3">
+                                <label>Winning Team:</label>
+                                <select @bind="selectedMatch.WinningTeamId" class="form-control">
+                                    <option value="">-- Select Winner --</option>
+                                    <option value="@selectedMatch.Team1Id">@GetTeamName(selectedMatch.Team1Id)</option>
+                                    <option value="@selectedMatch.Team2Id">@GetTeamName(selectedMatch.Team2Id)</option>
+                                </select>
+                            </div>
+                        }
+
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-secondary" @onclick="() => showUpdateScoreModal = false">Cancel</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+}
+
+@code {
+    private List<Match> liveMatches = new();
+    private List<Team> teams = new();
+    private bool showUpdateScoreModal = false;
+    private Match? selectedMatch;
+    private Timer? refreshTimer;
+
+    protected override void OnInitialized()
+    {
+        LoadData();
+        // Set up timer to refresh data every 30 seconds
+        refreshTimer = new Timer(async _ => 
+        {
+            await InvokeAsync(() => 
+            {
+                LoadData();
+                StateHasChanged();
+            });
+        }, null, TimeSpan.Zero, TimeSpan.FromSeconds(30));
+    }
+
+    private void LoadData()
+    {
+        liveMatches = DataService.GetLiveMatches();
+        teams = DataService.GetAllTeams();
+    }
+
+    private string GetTeamName(int teamId)
+    {
+        return teams.FirstOrDefault(t => t.Id == teamId)?.Name ?? "Unknown Team";
+    }
+
+    private void NavigateToUpdateScore(Match match)
+    {
+        selectedMatch = new Match
+        {
+            Id = match.Id,
+            Team1Id = match.Team1Id,
+            Team2Id = match.Team2Id,
+            Venue = match.Venue,
+            ScheduledDateTime = match.ScheduledDateTime,
+            Status = match.Status,
+            Team1Score = match.Team1Score,
+            Team1Wickets = match.Team1Wickets,
+            Team1Overs = match.Team1Overs,
+            Team1Balls = match.Team1Balls,
+            Team2Score = match.Team2Score,
+            Team2Wickets = match.Team2Wickets,
+            Team2Overs = match.Team2Overs,
+            Team2Balls = match.Team2Balls,
+            WinningTeamId = match.WinningTeamId
+        };
+        showUpdateScoreModal = true;
+    }
+
+    private void HandleSubmit()
+    {
+        if (selectedMatch != null)
+        {
+            DataService.UpdateMatch(selectedMatch);
+            showUpdateScoreModal = false;
+            LoadData();
+        }
+    }
+
+    public void Dispose()
+    {
+        refreshTimer?.Dispose();
+    }
+} 
