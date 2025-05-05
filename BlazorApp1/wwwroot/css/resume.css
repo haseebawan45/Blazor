@@ -1,0 +1,150 @@
+body {
+    margin: 40px;
+    padding: 20px;
+    background-color: #121212;
+    color: rgb(230, 230, 230);
+}
+
+h1 {
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+    color: rgb(200, 200, 200);
+}
+
+p a {
+    text-decoration: none;
+    color: rgb(255, 128, 96);
+}
+
+td strong {
+    color: rgb(255, 128, 96);
+}
+
+.info {
+    font-size: 14px;
+    color: rgb(180, 180, 180);
+}
+
+h2 {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: #1e1e1e;
+}
+
+td, th {
+    border: 1px solid rgb(85, 85, 85);
+    padding: 10px;
+    text-align: left;
+    color: rgb(230, 230, 230);
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+p:last-of-type {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.login-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff5733, #8b2500);
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #cc4422, #661a00);
+    padding: 13px 43px;
+}
+
+.resume-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    color: #e0e0e0;
+}
+
+.resume-section {
+    margin: 2rem 0;
+}
+
+.resume-section h2 {
+    color: #ff5733;
+    border-bottom: 2px solid #ff5733;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.resume-section p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    text-align: left;
+    white-space: pre-line;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff5733, #8b2500);
+    border: none;
+    padding: 0.75rem 2rem;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #cc4422, #661a00);
+    transform: translateY(-2px);
+}

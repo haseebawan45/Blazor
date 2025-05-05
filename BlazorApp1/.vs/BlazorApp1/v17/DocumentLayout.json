@@ -1,0 +1,55 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Programmings\\Visual Programming\\BlazorApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3B08C128-D44F-4222-BDFF-C6425F0594F0}|BlazorApp1.csproj|d:\\programmings\\visual programming\\blazorapp1\\components\\pages\\form.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B08C128-D44F-4222-BDFF-C6425F0594F0}|BlazorApp1.csproj|solutionrelative:components\\pages\\form.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B08C128-D44F-4222-BDFF-C6425F0594F0}|BlazorApp1.csproj|d:\\programmings\\visual programming\\blazorapp1\\components\\pages\\resume.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3B08C128-D44F-4222-BDFF-C6425F0594F0}|BlazorApp1.csproj|solutionrelative:components\\pages\\resume.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form.razor",
+              "DocumentMoniker": "D:\\Programmings\\Visual Programming\\BlazorApp1\\Components\\Pages\\Form.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Form.razor",
+              "ToolTip": "D:\\Programmings\\Visual Programming\\BlazorApp1\\Components\\Pages\\Form.razor",
+              "RelativeToolTip": "Components\\Pages\\Form.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-12T08:31:57.806Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Resume.razor",
+              "DocumentMoniker": "D:\\Programmings\\Visual Programming\\BlazorApp1\\Components\\Pages\\Resume.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Resume.razor",
+              "ToolTip": "D:\\Programmings\\Visual Programming\\BlazorApp1\\Components\\Pages\\Resume.razor",
+              "RelativeToolTip": "Components\\Pages\\Resume.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-12T08:30:33.434Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

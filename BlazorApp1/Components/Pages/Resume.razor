@@ -1,0 +1,49 @@
+@page "/resume"
+
+@using Microsoft.AspNetCore.Components
+@using BlazorApp1.Services
+@inject ResumeDataService ResumeService
+
+<div class="container">
+    @if (ResumeService.Resume != null)
+    {
+        <div class="resume-content">
+            <h1>@ResumeService.Resume.Name</h1>
+            <div class="contact-info">
+                <p>📱 @ResumeService.Resume.Contact</p>
+                <p>📧 @ResumeService.Resume.Email</p>
+                <p>📍 @ResumeService.Resume.Address</p>
+            </div>
+
+            <section class="resume-section">
+                <h2>Professional Summary</h2>
+                <p>@ResumeService.Resume.Summary</p>
+            </section>
+
+            <section class="resume-section">
+                <h2>Key Achievements</h2>
+                <p>@ResumeService.Resume.KeyAchievements</p>
+            </section>
+
+            <section class="resume-section">
+                <h2>Education</h2>
+                <p>@ResumeService.Resume.Education</p>
+            </section>
+        </div>
+    }
+    else
+    {
+        <p>No resume data available. Please fill out the form first.</p>
+        <button class="btn btn-primary" @onclick="NavigateToForm">Create Resume</button>
+    }
+</div>
+
+@code {
+    [Inject]
+    private NavigationManager Navigation { get; set; } = default!;
+
+    private void NavigateToForm()
+    {
+        Navigation.NavigateTo("/form");
+    }
+}

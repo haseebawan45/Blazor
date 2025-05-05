@@ -1,0 +1,55 @@
+@page "/form"
+@using BlazorApp1.Services
+@inject NavigationManager NavigationManager
+@inject ResumeDataService ResumeService
+
+<div class="container">
+    <h1 class="form-heading">AI-Powered Resume Generator</h1>
+    <p>Fill in your details below:</p>
+
+    <EditForm Model="resumeData" OnValidSubmit="HandleValidSubmit" class="resume-form">
+        <DataAnnotationsValidator />
+        <div class="input-group">
+            <label for="Name">Full Name</label>
+            <InputText id="Name" class="form-control" @bind-Value="resumeData.Name" placeholder="Enter your full name" />
+        </div>
+        <div class="input-group">
+            <label for="Contact">Phone Number</label>
+            <InputText id="Contact" class="form-control" @bind-Value="resumeData.Contact" placeholder="e.g. 03123456789" />
+        </div>
+        <div class="input-group">
+            <label for="Email">Email Address</label>
+            <InputText id="Email" type="email" class="form-control" @bind-Value="resumeData.Email" placeholder="Enter your email address" />
+        </div>
+        <div class="input-group">
+            <label for="Address">Residential Address</label>
+            <InputTextArea id="Address" class="form-control" @bind-Value="resumeData.Address" placeholder="Enter your complete address" rows="3" />
+        </div>
+        <div class="input-group">
+            <label for="Summary">Professional Summary</label>
+            <InputTextArea id="Summary" class="form-control" @bind-Value="resumeData.Summary" placeholder="Summarize your skills and experience" rows="4" />
+        </div>
+        <div class="input-group">
+            <label for="KeyAchievements">Key Achievements</label>
+            <InputTextArea id="KeyAchievements" class="form-control" @bind-Value="resumeData.KeyAchievements" placeholder="Highlight major career achievements" rows="4" />
+        </div>
+        <div class="input-group">
+            <label for="Education">Educational Background</label>
+            <InputTextArea id="Education" class="form-control" @bind-Value="resumeData.Education" placeholder="List your degrees and certifications" rows="4" />
+        </div>
+        <button type="submit" class="submit-btn">Generate Resume</button>
+    </EditForm>
+</div>
+
+@code {
+    // Create a local resume model to bind the form fields.
+    private BlazorApp1.Models.ResumeModel resumeData = new BlazorApp1.Models.ResumeModel();
+
+    private void HandleValidSubmit()
+    {
+        // Save the filled data to the service
+        ResumeService.Resume = resumeData;
+        // Navigate to the resume page to display the result
+        NavigationManager.NavigateTo("/resume");
+    }
+}
