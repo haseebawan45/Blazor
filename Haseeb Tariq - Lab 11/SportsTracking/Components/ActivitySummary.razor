@@ -1,0 +1,133 @@
+@namespace SportsTracking.Components
+@using SportsTracking.Models
+@using SportsTracking.Services
+@inject SportActivityService ActivityService
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h3>Activity Summary</h3>
+    </div>
+    <div class="card-body">
+        <div class="mb-3">
+            <label for="sportFilter" class="form-label">Filter by Sport</label>
+            <select id="sportFilter" class="form-select" @bind="SelectedSport">
+                <option value="">All Sports</option>
+                @foreach (var sport in SportActivityFactory.GetAvailableSportTypes())
+                {
+                    <option value="@sport">@sport</option>
+                }
+            </select>
+        </div>
+
+        @if (string.IsNullOrEmpty(SelectedSport))
+        {
+            <h4>All Sports</h4>
+            @if (!ActivityService.Activities.Any())
+            {
+                <p>No activities logged yet.</p>
+            }
+            else
+            {
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sport</th>
+                            <th>Total Sessions</th>
+                            <th>Total Duration (min)</th>
+                            <th>Average Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sport in ActivityService.GetAvailableSports())
+                        {
+                            <tr>
+                                <td>@sport</td>
+                                <td>@ActivityService.GetActivitiesBySportName(sport).Count</td>
+                                <td>@ActivityService.GetTotalDurationBySport(sport)</td>
+                                <td>@Math.Round(ActivityService.GetAveragePerformanceBySport(sport), 1)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        }
+        else
+        {
+            <h4>@SelectedSport Summary</h4>
+            
+            var sportActivities = ActivityService.GetActivitiesBySportName(SelectedSport);
+            
+
+            @if (!sportActivities.Any())
+            {
+                <p>No @SelectedSport activities logged yet.</p>
+            }
+            else
+            {
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Sessions</h5>
+                                <p class="card-text display-4">@sportActivities.Count</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Duration</h5>
+                                <p class="card-text display-4">@ActivityService.GetTotalDurationBySport(SelectedSport) min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Average Rating</h5>
+                                <p class="card-text display-4">@Math.Round(ActivityService.GetAveragePerformanceBySport(SelectedSport), 1)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h5>Recent Activities</h5>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Player</th>
+                            <th>Duration</th>
+                            <th>Rating</th>
+                            <th>Metrics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var activity in sportActivities.OrderByDescending(a => a.Date).Take(5))
+                        {
+                            <tr>
+                                <td>@activity.Date.ToShortDateString()</td>
+                                <td>@activity.PlayerName</td>
+                                <td>@activity.DurationMinutes min</td>
+                                <td>@activity.PerformanceRating/10</td>
+                                <td>@activity.GetPerformanceMetrics()</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private string SelectedSport { get; set; } = "";
+
+    [Parameter]
+    public EventCallback OnRefresh { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await OnRefresh.InvokeAsync();
+    }
+} 

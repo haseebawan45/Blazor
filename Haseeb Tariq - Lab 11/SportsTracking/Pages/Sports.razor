@@ -1,0 +1,29 @@
+@page "/sports"
+@namespace SportsTracking.Pages
+@using SportsTracking.Models
+@using SportsTracking.Services
+@using SportsTracking.Components
+@inject SportActivityService ActivityService
+
+<PageTitle>Sports Tracking</PageTitle>
+
+<div class="container">
+    <h1 class="my-4">Sports Activity Tracker</h1>
+    
+    <div class="row">
+        <div class="col-md-5">
+            <ActivityForm OnActivityAdded="RefreshComponents" />
+        </div>
+        
+        <div class="col-md-7">
+            <ActivitySummary OnRefresh="RefreshComponents" />
+        </div>
+    </div>
+</div>
+
+@code {
+    private async Task RefreshComponents()
+    {
+        StateHasChanged();
+    }
+} 

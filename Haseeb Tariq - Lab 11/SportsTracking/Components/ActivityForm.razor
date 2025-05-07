@@ -1,0 +1,119 @@
+@namespace SportsTracking.Components
+@using SportsTracking.Models
+@using SportsTracking.Services
+@inject SportActivityService ActivityService
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h3>Log Training Session</h3>
+    </div>
+    <div class="card-body">
+        <EditForm Model="@_activity" OnValidSubmit="HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="mb-3">
+                <label for="sportType" class="form-label">Sport Type</label>
+                <select id="sportType" class="form-select" @bind="_selectedSportType" @bind:after="UpdateActivityType">
+                    @foreach (var sport in SportActivityFactory.GetAvailableSportTypes())
+                    {
+                        <option value="@sport">@sport</option>
+                    }
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="playerName" class="form-label">Player Name</label>
+                <InputText id="playerName" class="form-control" @bind-Value="_activity.PlayerName" />
+                <ValidationMessage For="@(() => _activity.PlayerName)" />
+            </div>
+
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <InputDate id="date" class="form-control" @bind-Value="_activity.Date" />
+                <ValidationMessage For="@(() => _activity.Date)" />
+            </div>
+
+            <div class="mb-3">
+                <label for="duration" class="form-label">Duration (minutes)</label>
+                <InputNumber id="duration" class="form-control" @bind-Value="_activity.DurationMinutes" />
+                <ValidationMessage For="@(() => _activity.DurationMinutes)" />
+            </div>
+
+            <div class="mb-3">
+                <label for="rating" class="form-label">Performance Rating (1-10)</label>
+                <InputNumber id="rating" class="form-control" @bind-Value="_activity.PerformanceRating" />
+                <ValidationMessage For="@(() => _activity.PerformanceRating)" />
+            </div>
+
+            <div class="mb-3">
+                <label for="notes" class="form-label">Notes</label>
+                <InputTextArea id="notes" class="form-control" @bind-Value="_activity.Notes" rows="3" />
+            </div>
+
+            @if (_selectedSportType == "Football")
+            {
+                <div class="mb-3">
+                    <label for="goals" class="form-label">Goals Scored</label>
+                    <InputNumber id="goals" class="form-control" @bind-Value="((FootballActivity)_activity).GoalsScored" />
+                </div>
+                <div class="mb-3">
+                    <label for="assists" class="form-label">Assists</label>
+                    <InputNumber id="assists" class="form-control" @bind-Value="((FootballActivity)_activity).Assists" />
+                </div>
+            }
+            else if (_selectedSportType == "Basketball")
+            {
+                <div class="mb-3">
+                    <label for="points" class="form-label">Points Scored</label>
+                    <InputNumber id="points" class="form-control" @bind-Value="((BasketballActivity)_activity).PointsScored" />
+                </div>
+                <div class="mb-3">
+                    <label for="rebounds" class="form-label">Rebounds</label>
+                    <InputNumber id="rebounds" class="form-control" @bind-Value="((BasketballActivity)_activity).Rebounds" />
+                </div>
+            }
+            else if (_selectedSportType == "Tennis")
+            {
+                <div class="mb-3">
+                    <label for="games" class="form-label">Games Won</label>
+                    <InputNumber id="games" class="form-control" @bind-Value="((TennisActivity)_activity).GamesWon" />
+                </div>
+                <div class="mb-3">
+                    <label for="sets" class="form-label">Sets Won</label>
+                    <InputNumber id="sets" class="form-control" @bind-Value="((TennisActivity)_activity).SetsWon" />
+                </div>
+            }
+
+            <button type="submit" class="btn btn-primary">Save Session</button>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private SportActivity _activity = new FootballActivity();
+    private string _selectedSportType = "Football";
+
+    [Parameter]
+    public EventCallback OnActivityAdded { get; set; }
+
+    protected override void OnInitialized()
+    {
+        UpdateActivityType();
+    }
+
+    private void UpdateActivityType()
+    {
+        _activity = SportActivityFactory.CreateSportActivity(_selectedSportType);
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        ActivityService.AddActivity(_activity);
+        
+        // Reset form with new instance of the same type
+        _activity = SportActivityFactory.CreateSportActivity(_selectedSportType);
+        
+        await OnActivityAdded.InvokeAsync();
+    }
+} 
