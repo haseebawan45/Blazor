@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VJZ3Urrrn0c=",
+  "dgSpecHash": "NW/1oCGyPog=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hasee\\Downloads\\Haseeb Tariq - Lab 12\\SportsTracking\\SportsTracking.csproj",
+  "projectFilePath": "D:\\Programmings\\Blazor\\Haseeb Tariq - Lab 11\\SportsTracking\\SportsTracking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hasee\\.nuget\\packages\\microsoft.aspnetcore.authorization\\9.0.4\\microsoft.aspnetcore.authorization.9.0.4.nupkg.sha512",
     "C:\\Users\\hasee\\.nuget\\packages\\microsoft.aspnetcore.components\\9.0.4\\microsoft.aspnetcore.components.9.0.4.nupkg.sha512",

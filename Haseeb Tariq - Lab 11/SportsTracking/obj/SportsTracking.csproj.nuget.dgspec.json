@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hasee\\Downloads\\Haseeb Tariq - Lab 12\\SportsTracking\\SportsTracking.csproj": {}
+    "D:\\Programmings\\Blazor\\Haseeb Tariq - Lab 11\\SportsTracking\\SportsTracking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hasee\\Downloads\\Haseeb Tariq - Lab 12\\SportsTracking\\SportsTracking.csproj": {
+    "D:\\Programmings\\Blazor\\Haseeb Tariq - Lab 11\\SportsTracking\\SportsTracking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hasee\\Downloads\\Haseeb Tariq - Lab 12\\SportsTracking\\SportsTracking.csproj",
+        "projectUniqueName": "D:\\Programmings\\Blazor\\Haseeb Tariq - Lab 11\\SportsTracking\\SportsTracking.csproj",
         "projectName": "SportsTracking",
-        "projectPath": "C:\\Users\\hasee\\Downloads\\Haseeb Tariq - Lab 12\\SportsTracking\\SportsTracking.csproj",
+        "projectPath": "D:\\Programmings\\Blazor\\Haseeb Tariq - Lab 11\\SportsTracking\\SportsTracking.csproj",
         "packagesPath": "C:\\Users\\hasee\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hasee\\Downloads\\Haseeb Tariq - Lab 12\\SportsTracking\\obj\\",
+        "outputPath": "D:\\Programmings\\Blazor\\Haseeb Tariq - Lab 11\\SportsTracking\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hasee\\AppData\\Roaming\\NuGet\\NuGet.Config"

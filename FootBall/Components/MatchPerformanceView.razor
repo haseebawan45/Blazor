@@ -1,0 +1,129 @@
+@using FootBall.Models
+@using FootBall.Services
+@inject IStatsService StatsService
+
+<div class="performance-stats">
+    <h4>Match Performance Stats</h4>
+
+    @if (Loading)
+    {
+        <p><em>Loading stats...</em></p>
+    }
+    else if (HasError)
+    {
+        <div class="alert alert-danger">
+            <p>Error loading match performance data:</p>
+            <pre>@ErrorMessage</pre>
+        </div>
+    }
+    else if (Stats.Count == 0)
+    {
+        <p>No match performance data available for this player.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Match</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                    <th>Passes</th>
+                    <th>Pass Accuracy</th>
+                    <th>Minutes</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var stat in Stats)
+                {
+                    <tr>
+                        <td>@stat.Date.ToShortDateString()</td>
+                        <td>@stat.MatchId</td>
+                        <td>@stat.Goals</td>
+                        <td>@stat.Assists</td>
+                        <td>@stat.Passes</td>
+                        <td>@(stat.PassAccuracy.ToString("P1"))</td>
+                        <td>@stat.MinutesPlayed</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="stats-summary">
+            <h5>Summary</h5>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Goals</h5>
+                            <p class="card-text">@Stats.Sum(s => s.Goals)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Assists</h5>
+                            <p class="card-text">@Stats.Sum(s => s.Assists)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Avg. Pass Accuracy</h5>
+                            <p class="card-text">@(Stats.Any() ? Stats.Average(s => s.PassAccuracy).ToString("P1") : "N/A")</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Minutes</h5>
+                            <p class="card-text">@Stats.Sum(s => s.MinutesPlayed)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string PlayerId { get; set; } = null!;
+
+    private List<MatchPerformanceStat> Stats { get; set; } = new List<MatchPerformanceStat>();
+    private bool Loading { get; set; } = true;
+    private bool HasError { get; set; } = false;
+    private string ErrorMessage { get; set; } = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Loading = true;
+            Stats = await StatsService.GetPlayerMatchStatsAsync(int.Parse(PlayerId));
+            Loading = false;
+        }
+        catch (FormatException ex)
+        {
+            Loading = false;
+            HasError = true;
+            ErrorMessage = $"Invalid player ID format: {ex.Message}";
+            Console.WriteLine(ErrorMessage);
+        }
+        catch (Exception ex)
+        {
+            Loading = false;
+            HasError = true;
+            ErrorMessage = $"Error: {ex.GetType().Name} - {ex.Message}";
+            if (ex.InnerException != null)
+            {
+                ErrorMessage += $"\nInner Exception: {ex.InnerException.Message}";
+            }
+            Console.WriteLine(ErrorMessage);
+        }
+    }
+} 

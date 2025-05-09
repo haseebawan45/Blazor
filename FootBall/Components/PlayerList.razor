@@ -1,0 +1,65 @@
+@page "/players"
+@using FootBall.Models
+@using FootBall.Services
+@inject IPlayerService PlayerService
+
+<h3>Football Players</h3>
+
+<div class="filter-section">
+    <div class="form-group">
+        <label for="positionFilter">Filter by Position:</label>
+        <select id="positionFilter" class="form-control" @bind="SelectedPosition">
+            <option value="">All Positions</option>
+            <option value="Goalkeeper">Goalkeeper</option>
+            <option value="Defender">Defender</option>
+            <option value="Midfielder">Midfielder</option>
+            <option value="Forward">Forward</option>
+        </select>
+    </div>
+</div>
+
+@if (Players == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Position</th>
+                <th>Nationality</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in FilteredPlayers)
+            {
+                <tr>
+                    <td>@player.Name</td>
+                    <td>@player.Age</td>
+                    <td>@player.Position</td>
+                    <td>@player.Nationality</td>
+                    <td>
+                        <a href="/player/@player.Id" class="btn btn-primary btn-sm">View Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Player> Players { get; set; } = null!;
+    private string SelectedPosition { get; set; } = "";
+    private List<Player> FilteredPlayers => string.IsNullOrEmpty(SelectedPosition)
+        ? Players
+        : Players.Where(p => p.Position == SelectedPosition).ToList();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Players = await PlayerService.GetAllPlayersAsync();
+    }
+} 

@@ -1,0 +1,138 @@
+@page "/player/{PlayerId:int}"
+@using FootBall.Models
+@using FootBall.Services
+@inject IPlayerService PlayerService
+@inject IStatsService StatsService
+@inject NavigationManager NavigationManager
+
+<div class="player-details">
+    @if (Loading)
+    {
+        <p><em>Loading player...</em></p>
+    }
+    else if (HasError)
+    {
+        <div class="alert alert-danger">
+            <h4>Error Loading Player</h4>
+            <p>@ErrorMessage</p>
+            <button class="btn btn-primary" @onclick="NavigateToPlayerList">Return to Player List</button>
+        </div>
+    }
+    else if (Player == null || Player.Id == 0)
+    {
+        <div class="alert alert-warning">
+            <h4>Player Not Found</h4>
+            <p>Sorry, we couldn't find the player you're looking for.</p>
+            <button class="btn btn-primary" @onclick="NavigateToPlayerList">Return to Player List</button>
+        </div>
+    }
+    else
+    {
+        <div class="player-header">
+            <h2>@Player.Name</h2>
+            <div class="player-info">
+                <span class="badge bg-secondary">Age: @Player.Age</span>
+                <span class="badge bg-info">Position: @Player.Position</span>
+                <span class="badge bg-dark">@Player.Nationality</span>
+            </div>
+        </div>
+
+        <div class="stats-tabs">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link @(ActiveTab == "match" ? "active" : "")" 
+                            @onclick="ShowMatchTab">
+                        Match Performance
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link @(ActiveTab == "fitness" ? "active" : "")" 
+                            @onclick="ShowFitnessTab">
+                        Fitness
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link @(ActiveTab == "injury" ? "active" : "")" 
+                            @onclick="ShowInjuryTab">
+                        Injury History
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content mt-3">
+            @if (ActiveTab == "match")
+            {
+                <StatViewFactory StatType="StatType.MatchPerformance" PlayerId="@PlayerId" />
+            }
+            else if (ActiveTab == "fitness")
+            {
+                <StatViewFactory StatType="StatType.Fitness" PlayerId="@PlayerId" />
+            }
+            else if (ActiveTab == "injury")
+            {
+                <InjuryView PlayerId="@PlayerId" />
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string PlayerId { get; set; } = null!;
+
+    private Player Player { get; set; } = null!;
+    private string ActiveTab { get; set; } = "match";
+    private bool Loading { get; set; } = true;
+    private bool HasError { get; set; } = false;
+    private string ErrorMessage { get; set; } = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Loading = true;
+            int playerIdNum = int.Parse(PlayerId);
+            Player = await PlayerService.GetPlayerByIdAsync(playerIdNum);
+            Loading = false;
+        }
+        catch (FormatException ex)
+        {
+            HasError = true;
+            Loading = false;
+            ErrorMessage = $"Invalid player ID format: {ex.Message}";
+            Console.WriteLine(ErrorMessage);
+        }
+        catch (Exception ex)
+        {
+            HasError = true;
+            Loading = false;
+            ErrorMessage = $"Error loading player: {ex.GetType().Name} - {ex.Message}";
+            if (ex.InnerException != null)
+            {
+                ErrorMessage += $"\nInner Exception: {ex.InnerException.Message}";
+            }
+            Console.WriteLine(ErrorMessage);
+        }
+    }
+    
+    private void ShowMatchTab()
+    {
+        ActiveTab = "match";
+    }
+    
+    private void ShowFitnessTab()
+    {
+        ActiveTab = "fitness";
+    }
+    
+    private void ShowInjuryTab()
+    {
+        ActiveTab = "injury";
+    }
+    
+    private void NavigateToPlayerList()
+    {
+        NavigationManager.NavigateTo("/players");
+    }
+} 

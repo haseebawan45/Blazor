@@ -1,0 +1,94 @@
+@page "/errorlog"
+@using System.Text
+@inject IWebHostEnvironment Environment
+
+<h3>Error Log</h3>
+
+<div class="card mb-4">
+    <div class="card-header">
+        Runtime Information
+    </div>
+    <div class="card-body">
+        <ul>
+            <li><strong>Environment:</strong> @Environment.EnvironmentName</li>
+            <li><strong>Runtime Version:</strong> @System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription</li>
+            <li><strong>OS:</strong> @System.Runtime.InteropServices.RuntimeInformation.OSDescription</li>
+        </ul>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Application Errors
+        <button class="btn btn-sm btn-danger float-end" @onclick="ClearLogs">Clear Logs</button>
+    </div>
+    <div class="card-body">
+        @if (!_errorLogs.Any())
+        {
+            <p>No errors have been logged.</p>
+        }
+        else
+        {
+            <div class="list-group">
+                @foreach (var log in _errorLogs)
+                {
+                    <div class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <h5>@log.Source</h5>
+                            <small>@log.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</small>
+                        </div>
+                        <p class="mb-1">@log.Message</p>
+                        @if (!string.IsNullOrEmpty(log.Details))
+                        {
+                            <pre class="error-details">@log.Details</pre>
+                        }
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .error-details {
+        background-color: #f8f9fa;
+        padding: 10px;
+        font-size: 0.85rem;
+        border: 1px solid #dee2e6;
+        border-radius: 3px;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+</style>
+
+@code {
+    // Static collection to maintain errors across component instances
+    private static List<ErrorLogEntry> _errorLogs = new List<ErrorLogEntry>();
+    
+    // Public method that can be called from any component to log errors
+    public static void LogError(string source, string message, string details = null)
+    {
+        _errorLogs.Add(new ErrorLogEntry
+        {
+            Source = source,
+            Message = message,
+            Details = details,
+            Timestamp = DateTime.Now
+        });
+    }
+    
+    private void ClearLogs()
+    {
+        _errorLogs.Clear();
+        StateHasChanged();
+    }
+    
+    // Simple class to represent an error log entry
+    private class ErrorLogEntry
+    {
+        public string Source { get; set; }
+        public string Message { get; set; }
+        public string Details { get; set; }
+        public DateTime Timestamp { get; set; }
+    }
+} 

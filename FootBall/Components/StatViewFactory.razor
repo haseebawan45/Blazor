@@ -1,0 +1,61 @@
+@using FootBall.Models
+@using FootBall.Services
+@inject IStatsService StatsService
+
+@if (HasError)
+{
+    <div class="alert alert-danger">
+        <p>Error in StatViewFactory:</p>
+        <pre>@ErrorMessage</pre>
+    </div>
+}
+else
+{
+    @switch (StatType)
+    {
+        case StatType.MatchPerformance:
+            <MatchPerformanceView PlayerId="@PlayerId" />
+            break;
+        case StatType.Fitness:
+            <FitnessView PlayerId="@PlayerId" />
+            break;
+        default:
+            <div>Unsupported stat type: @StatType</div>
+            break;
+    }
+}
+
+@code {
+    [Parameter]
+    public StatType StatType { get; set; }
+
+    [Parameter]
+    public string PlayerId { get; set; } = null!;
+    
+    private bool HasError { get; set; } = false;
+    private string ErrorMessage { get; set; } = string.Empty;
+    
+    protected override void OnParametersSet()
+    {
+        try
+        {
+            // Validate parameters
+            if (!Enum.IsDefined(typeof(StatType), StatType))
+            {
+                HasError = true;
+                ErrorMessage = $"Invalid StatType value: {StatType}";
+            }
+            
+            if (string.IsNullOrEmpty(PlayerId))
+            {
+                HasError = true;
+                ErrorMessage = "PlayerId is required but was not provided";
+            }
+        }
+        catch (Exception ex)
+        {
+            HasError = true;
+            ErrorMessage = $"Error in StatViewFactory: {ex.GetType().Name} - {ex.Message}";
+        }
+    }
+} 

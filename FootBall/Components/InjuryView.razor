@@ -1,0 +1,110 @@
+@using FootBall.Models
+@using FootBall.Services
+@inject IStatsService StatsService
+
+<div class="injury-stats">
+    <h4>Injury History</h4>
+
+    @if (Loading)
+    {
+        <p><em>Loading injury data...</em></p>
+    }
+    else if (HasError)
+    {
+        <div class="alert alert-danger">
+            <p>Error loading injury data:</p>
+            <pre>@ErrorMessage</pre>
+        </div>
+    }
+    else if (Injuries.Count == 0)
+    {
+        <p>No injury history available for this player.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Injury Type</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Games Missed</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var injury in Injuries.OrderByDescending(i => i.StartDate))
+                {
+                    <tr>
+                        <td>@injury.InjuryType</td>
+                        <td>@injury.StartDate.ToShortDateString()</td>
+                        <td>@(injury.EndDate.HasValue ? injury.EndDate.Value.ToShortDateString() : "Ongoing")</td>
+                        <td>@injury.GamesMissed</td>
+                        <td>@injury.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="stats-summary">
+            <h5>Summary</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Injuries</h5>
+                            <p class="card-text">@Injuries.Count</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Games Missed</h5>
+                            <p class="card-text">@Injuries.Sum(i => i.GamesMissed)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Current Status</h5>
+                            <p class="card-text">@(Injuries.Any(i => !i.EndDate.HasValue) ? "Injured" : "Fit")</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string PlayerId { get; set; } = null!;
+
+    private List<Injury> Injuries { get; set; } = new List<Injury>();
+    private bool Loading { get; set; } = true;
+    private bool HasError { get; set; } = false;
+    private string ErrorMessage { get; set; } = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Loading = true;
+            Injuries = await StatsService.GetPlayerInjuriesAsync(int.Parse(PlayerId));
+            Loading = false;
+        }
+        catch (Exception ex)
+        {
+            Loading = false;
+            HasError = true;
+            ErrorMessage = $"Error: {ex.GetType().Name} - {ex.Message}";
+            if (ex.InnerException != null)
+            {
+                ErrorMessage += $"\nInner Exception: {ex.InnerException.Message}";
+            }
+            Console.WriteLine(ErrorMessage);
+        }
+    }
+} 

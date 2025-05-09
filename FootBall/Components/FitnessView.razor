@@ -1,0 +1,103 @@
+@using FootBall.Models
+@using FootBall.Services
+@inject IStatsService StatsService
+
+<div class="fitness-stats">
+    <h4>Fitness Stats</h4>
+
+    @if (Loading)
+    {
+        <p><em>Loading stats...</em></p>
+    }
+    else if (HasError)
+    {
+        <div class="alert alert-danger">
+            <p>An error occurred while loading fitness data.</p>
+        </div>
+    }
+    else if (Stats.Count == 0)
+    {
+        <p>No fitness data available for this player.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Match</th>
+                    <th>Distance Run (km)</th>
+                    <th>Sprint Count</th>
+                    <th>Top Speed (km/h)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var stat in Stats)
+                {
+                    <tr>
+                        <td>@stat.Date.ToShortDateString()</td>
+                        <td>@stat.MatchId</td>
+                        <td>@stat.DistanceRun.ToString("F1")</td>
+                        <td>@stat.SprintCount</td>
+                        <td>@stat.TopSpeed.ToString("F1")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="stats-summary">
+            <h5>Summary</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Avg. Distance</h5>
+                            <p class="card-text">@(Stats.Any() ? Stats.Average(s => s.DistanceRun).ToString("F1") : "0") km</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Avg. Sprints</h5>
+                            <p class="card-text">@(Stats.Any() ? Stats.Average(s => s.SprintCount).ToString("F0") : "0")</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Max Speed</h5>
+                            <p class="card-text">@(Stats.Any() ? Stats.Max(s => s.TopSpeed).ToString("F1") : "0") km/h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string PlayerId { get; set; } = null!;
+
+    private List<FitnessStat> Stats { get; set; } = new List<FitnessStat>();
+    private bool Loading { get; set; } = true;
+    private bool HasError { get; set; } = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Loading = true;
+            Stats = await StatsService.GetPlayerFitnessStatsAsync(int.Parse(PlayerId));
+            Loading = false;
+        }
+        catch (Exception ex)
+        {
+            Loading = false;
+            HasError = true;
+            Console.WriteLine($"Error loading fitness stats: {ex.Message}");
+        }
+    }
+} 
