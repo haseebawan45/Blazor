@@ -1075,10 +1075,10 @@ D:\Programmings\Blazor\BookBuzz\obj\Debug\net9.0\BookBuzz.dll
 D:\Programmings\Blazor\BookBuzz\obj\Debug\net9.0\refint\BookBuzz.dll
 D:\Programmings\Blazor\BookBuzz\obj\Debug\net9.0\BookBuzz.pdb
 D:\Programmings\Blazor\BookBuzz\obj\Debug\net9.0\ref\BookBuzz.dll
-D:\Programmings\Blazor\BookBuzz\bin\Debug\net9.0\wwwroot\_framework\BookBuzz.d377xd2n5j.pdb
-D:\Programmings\Blazor\BookBuzz\bin\Debug\net9.0\wwwroot\_framework\BookBuzz.pztdozjnum.wasm
-D:\Programmings\Blazor\BookBuzz\bin\Debug\net9.0\wwwroot\_framework\BookBuzz.pztdozjnum.wasm.gz
-D:\Programmings\Blazor\BookBuzz\bin\Debug\net9.0\wwwroot\_framework\BookBuzz.d377xd2n5j.pdb.gz
-D:\Programmings\Blazor\BookBuzz\obj\Debug\net9.0\compressed\8ou15x0ogc-pztdozjnum.gz
-D:\Programmings\Blazor\BookBuzz\obj\Debug\net9.0\compressed\kprvjgro1v-d377xd2n5j.gz
-D:\Programmings\Blazor\BookBuzz\obj\Debug\net9.0\compressed\itits360w7-qvh30oweo5.gz
+D:\Programmings\Blazor\BookBuzz\bin\Debug\net9.0\wwwroot\_framework\BookBuzz.peck3u6xl0.pdb
+D:\Programmings\Blazor\BookBuzz\bin\Debug\net9.0\wwwroot\_framework\BookBuzz.c7gdhmdabr.wasm
+D:\Programmings\Blazor\BookBuzz\bin\Debug\net9.0\wwwroot\_framework\BookBuzz.c7gdhmdabr.wasm.gz
+D:\Programmings\Blazor\BookBuzz\bin\Debug\net9.0\wwwroot\_framework\BookBuzz.peck3u6xl0.pdb.gz
+D:\Programmings\Blazor\BookBuzz\obj\Debug\net9.0\compressed\8ou15x0ogc-c7gdhmdabr.gz
+D:\Programmings\Blazor\BookBuzz\obj\Debug\net9.0\compressed\kprvjgro1v-peck3u6xl0.gz
+D:\Programmings\Blazor\BookBuzz\obj\Debug\net9.0\compressed\itits360w7-36maqd1ez9.gz

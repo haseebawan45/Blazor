@@ -7,7 +7,7 @@
 @inject IReviewService ReviewService
 @inject BookFilterService FilterService
 
-<h1>BookBuzz - Book Review App</h1>
+<h1 class="text-primary fw-bold mb-4">BookBuzz - Book Review App</h1>
 
 <div class="row mb-4">
     <div class="col-md-12">
@@ -25,41 +25,41 @@
         @foreach (var book in FilteredBooks)
         {
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card h-100 shadow border-info">
                     @if (!string.IsNullOrEmpty(book.CoverImageUrl))
                     {
                         <img src="@book.CoverImageUrl" class="card-img-top" alt="@book.Title" 
                              style="height: 200px; object-fit: cover;"
-                             onerror="this.onerror=null; this.src='https://placehold.co/200x300/e9ecef/495057?text=@(Uri.EscapeDataString(book.Title))'; this.alt='No image available';">
+                             onerror="this.onerror=null; this.src='https://placehold.co/200x300/6c3483/ffffff?text=@(Uri.EscapeDataString(book.Title))'; this.alt='No image available';">
                     }
                     else
                     {
-                        <div class="card-img-top bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
+                        <div class="card-img-top bg-gradient bg-primary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
                             <span>No Image</span>
                         </div>
                     }
-                    <div class="card-body">
-                        <h5 class="card-title">@book.Title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">@book.Author</h6>
+                    <div class="card-body bg-light">
+                        <h5 class="card-title text-primary fw-bold">@book.Title</h5>
+                        <h6 class="card-subtitle mb-2 text-info">@book.Author</h6>
                         <div class="mb-2">
-                            <span class="badge bg-primary">@book.Genre</span>
+                            <span class="badge bg-success">@book.Genre</span>
                         </div>
                         <div class="mb-2">
                             @for (int i = 1; i <= 5; i++)
                             {
                                 if (i <= Math.Round(book.AverageRating))
                                 {
-                                    <span class="text-warning">★</span>
+                                    <span style="color: #FFD700;">★</span>
                                 }
                                 else
                                 {
                                     <span class="text-secondary">☆</span>
                                 }
                             }
-                            <span class="ms-1">(@book.AverageRating.ToString("F1"))</span>
+                            <span class="ms-1 text-success fw-bold">(@book.AverageRating.ToString("F1"))</span>
                         </div>
                         <p class="card-text">@(book.Description?.Length > 100 ? book.Description.Substring(0, 100) + "..." : book.Description)</p>
-                        <a href="/book/@book.Id" class="btn btn-primary">View Details</a>
+                        <a href="/book/@book.Id" class="btn text-white shadow" style="background-color: #9b59b6;">View Details</a>
                     </div>
                 </div>
             </div>

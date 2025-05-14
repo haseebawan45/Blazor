@@ -2,16 +2,16 @@
 @using BookBuzz.Services
 @inject IBookService BookService
 
-<div class="card mb-4">
-    <div class="card-header">
+<div class="card mb-4 shadow border-info">
+    <div class="card-header bg-gradient bg-primary text-white">
         <h5 class="mb-0">Filter Books</h5>
     </div>
-    <div class="card-body">
+    <div class="card-body bg-light">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="genreSelect">Genre:</label>
-                    <select id="genreSelect" class="form-select" @bind="SelectedGenre">
+                    <label for="genreSelect" class="text-primary fw-bold">Genre:</label>
+                    <select id="genreSelect" class="form-select border-info" @bind="SelectedGenre">
                         <option value="">All Genres</option>
                         @foreach (var genre in Genres)
                         {
@@ -22,8 +22,8 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="ratingSelect">Minimum Rating:</label>
-                    <select id="ratingSelect" class="form-select" @bind="MinimumRating">
+                    <label for="ratingSelect" class="text-primary fw-bold">Minimum Rating:</label>
+                    <select id="ratingSelect" class="form-select border-info" @bind="MinimumRating">
                         <option value="0">Any Rating</option>
                         <option value="1">1+ Stars</option>
                         <option value="2">2+ Stars</option>
@@ -36,8 +36,8 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <button class="btn btn-primary" @onclick="ApplyFilter">Apply Filters</button>
-                <button class="btn btn-secondary ms-2" @onclick="ResetFilters">Reset</button>
+                <button class="btn text-white shadow" style="background-color: #9b59b6;" @onclick="ApplyFilter">Apply Filters</button>
+                <button class="btn btn-info text-white shadow ms-2" @onclick="ResetFilters">Reset</button>
             </div>
         </div>
     </div>

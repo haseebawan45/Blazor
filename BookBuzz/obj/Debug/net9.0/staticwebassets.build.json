@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U+loiIruuyywl8FAJ0tdU0hWrpeZV2T1Qn2Q5XiF7YE=",
+  "Hash": "5f8Yp4W0fuWXBAXQbowcXzWHZQDXnC1dHqsaDrsNvkI=",
   "Source": "BookBuzz",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "qvh30oweo5",
-      "Integrity": "uqKYHGmtlqrH+ZCV9nBdU64rQywYK9pnxb9nHY4neyA=",
+      "Fingerprint": "36maqd1ez9",
+      "Integrity": "RTNGAz51N0OhOZ/boWlLrXhnb7OJKQZsfixfwpUFX4c=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\blazor.boot.json"
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "d377xd2n5j",
-      "Integrity": "qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw=",
+      "Fingerprint": "peck3u6xl0",
+      "Integrity": "L8lf6pPOcATTzbNyJPbNjn2u+4IuXYfYqe3aPjUTabE=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\BookBuzz.pdb"
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "pztdozjnum",
-      "Integrity": "FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ=",
+      "Fingerprint": "c7gdhmdabr",
+      "Integrity": "SKzQPwW8Zh51L0IUYsVx6XY8tfymNZ0jzOhLW4Q3qUM=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\webcil\\BookBuzz.wasm"
@@ -5540,12 +5540,12 @@
       "OriginalItemSpec": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Web.wasm"
     },
     {
-      "Identity": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\8ou15x0ogc-pztdozjnum.gz",
+      "Identity": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\8ou15x0ogc-c7gdhmdabr.gz",
       "SourceId": "BookBuzz",
       "SourceType": "Computed",
       "ContentRoot": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/BookBuzz#[.{fingerprint=pztdozjnum}]!.wasm.gz",
+      "RelativePath": "_framework/BookBuzz#[.{fingerprint=c7gdhmdabr}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -5554,8 +5554,8 @@
       "RelatedAsset": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BookBuzz.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "utfbv8dqij",
-      "Integrity": "4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w=",
+      "Fingerprint": "jhs9oc50es",
+      "Integrity": "ie+4Rh9Qae+jPhZdhP+bj8zVjSx1UXDehVr7JraF1XM=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BookBuzz.wasm"
@@ -7073,7 +7073,7 @@
       "OriginalItemSpec": "D:\\Programmings\\Blazor\\BookBuzz\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\itits360w7-qvh30oweo5.gz",
+      "Identity": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\itits360w7-36maqd1ez9.gz",
       "SourceId": "BookBuzz",
       "SourceType": "Computed",
       "ContentRoot": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\",
@@ -7087,8 +7087,8 @@
       "RelatedAsset": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "b26n65dmb2",
-      "Integrity": "jTfwdYQ6/JW4Fdn8WAL+zwHdamce8Yv6cP8flX8vCZE=",
+      "Fingerprint": "vmqg1lfvx7",
+      "Integrity": "169tAsJgumBcFLxsn0MizyiMp94AKrD27CWVmCZjT/E=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json"
@@ -7430,12 +7430,12 @@
       "OriginalItemSpec": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Reflection.Metadata.wasm"
     },
     {
-      "Identity": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\kprvjgro1v-d377xd2n5j.gz",
+      "Identity": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\kprvjgro1v-peck3u6xl0.gz",
       "SourceId": "BookBuzz",
       "SourceType": "Computed",
       "ContentRoot": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/BookBuzz#[.{fingerprint=d377xd2n5j}]!.pdb.gz",
+      "RelativePath": "_framework/BookBuzz#[.{fingerprint=peck3u6xl0}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -7444,8 +7444,8 @@
       "RelatedAsset": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BookBuzz.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ji4fb22qg5",
-      "Integrity": "ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4=",
+      "Fingerprint": "5xwlzbsu0i",
+      "Integrity": "6ejednmfDgMiObnvYm8WGRNO2xzdEGATz4RMUyitduA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BookBuzz.pdb"
@@ -10705,11 +10705,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uqKYHGmtlqrH+ZCV9nBdU64rQywYK9pnxb9nHY4neyA=\""
+          "Value": "\"RTNGAz51N0OhOZ/boWlLrXhnb7OJKQZsfixfwpUFX4c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:50 GMT"
+          "Value": "Wed, 14 May 2025 18:44:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10719,18 +10719,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uqKYHGmtlqrH+ZCV9nBdU64rQywYK9pnxb9nHY4neyA="
+          "Value": "sha256-RTNGAz51N0OhOZ/boWlLrXhnb7OJKQZsfixfwpUFX4c="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\itits360w7-qvh30oweo5.gz",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\itits360w7-36maqd1ez9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000081214976"
+          "Quality": "0.000081247969"
         }
       ],
       "ResponseHeaders": [
@@ -10740,15 +10740,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12312"
+          "Value": "12307"
         },
         {
           "Name": "ETag",
-          "Value": "\"jTfwdYQ6/JW4Fdn8WAL+zwHdamce8Yv6cP8flX8vCZE=\""
+          "Value": "\"169tAsJgumBcFLxsn0MizyiMp94AKrD27CWVmCZjT/E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:31:02 GMT"
+          "Value": "Wed, 14 May 2025 18:40:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10768,19 +10768,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"uqKYHGmtlqrH+ZCV9nBdU64rQywYK9pnxb9nHY4neyA=\""
+          "Value": "W/\"RTNGAz51N0OhOZ/boWlLrXhnb7OJKQZsfixfwpUFX4c=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uqKYHGmtlqrH+ZCV9nBdU64rQywYK9pnxb9nHY4neyA="
+          "Value": "sha256-RTNGAz51N0OhOZ/boWlLrXhnb7OJKQZsfixfwpUFX4c="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\itits360w7-qvh30oweo5.gz",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\itits360w7-36maqd1ez9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10789,7 +10789,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12312"
+          "Value": "12307"
         },
         {
           "Name": "Content-Type",
@@ -10797,11 +10797,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"jTfwdYQ6/JW4Fdn8WAL+zwHdamce8Yv6cP8flX8vCZE=\""
+          "Value": "\"169tAsJgumBcFLxsn0MizyiMp94AKrD27CWVmCZjT/E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:31:02 GMT"
+          "Value": "Wed, 14 May 2025 18:40:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10819,7 +10819,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-jTfwdYQ6/JW4Fdn8WAL+zwHdamce8Yv6cP8flX8vCZE="
+          "Value": "sha256-169tAsJgumBcFLxsn0MizyiMp94AKrD27CWVmCZjT/E="
         }
       ]
     },
@@ -10961,305 +10961,7 @@
       ]
     },
     {
-      "Route": "_framework/BookBuzz.d377xd2n5j.pdb",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BookBuzz.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "38152"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:48 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d377xd2n5j"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/BookBuzz.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.d377xd2n5j.pdb",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\kprvjgro1v-d377xd2n5j.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000035627761"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "28067"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d377xd2n5j"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/BookBuzz.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.d377xd2n5j.pdb.gz",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\kprvjgro1v-d377xd2n5j.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "28067"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d377xd2n5j"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/BookBuzz.pdb.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.pdb",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BookBuzz.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "38152"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:48 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.pdb",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\kprvjgro1v-d377xd2n5j.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000035627761"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "28067"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.pdb.gz",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\kprvjgro1v-d377xd2n5j.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "28067"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.pztdozjnum.wasm",
+      "Route": "_framework/BookBuzz.c7gdhmdabr.wasm",
       "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BookBuzz.wasm",
       "Selectors": [],
       "ResponseHeaders": [
@@ -11269,7 +10971,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "60181"
+          "Value": "61717"
         },
         {
           "Name": "Content-Type",
@@ -11277,11 +10979,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ=\""
+          "Value": "\"SKzQPwW8Zh51L0IUYsVx6XY8tfymNZ0jzOhLW4Q3qUM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:49 GMT"
+          "Value": "Wed, 14 May 2025 18:44:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11291,7 +10993,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pztdozjnum"
+          "Value": "c7gdhmdabr"
         },
         {
           "Name": "label",
@@ -11299,18 +11001,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ="
+          "Value": "sha256-SKzQPwW8Zh51L0IUYsVx6XY8tfymNZ0jzOhLW4Q3qUM="
         }
       ]
     },
     {
-      "Route": "_framework/BookBuzz.pztdozjnum.wasm",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\8ou15x0ogc-pztdozjnum.gz",
+      "Route": "_framework/BookBuzz.c7gdhmdabr.wasm",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\8ou15x0ogc-c7gdhmdabr.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000045543562"
+          "Quality": "0.000044945840"
         }
       ],
       "ResponseHeaders": [
@@ -11320,15 +11022,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "21956"
+          "Value": "22248"
         },
         {
           "Name": "ETag",
-          "Value": "\"4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w=\""
+          "Value": "\"ie+4Rh9Qae+jPhZdhP+bj8zVjSx1UXDehVr7JraF1XM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:50 GMT"
+          "Value": "Wed, 14 May 2025 18:44:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11348,13 +11050,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ=\""
+          "Value": "W/\"SKzQPwW8Zh51L0IUYsVx6XY8tfymNZ0jzOhLW4Q3qUM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pztdozjnum"
+          "Value": "c7gdhmdabr"
         },
         {
           "Name": "label",
@@ -11362,13 +11064,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ="
+          "Value": "sha256-SKzQPwW8Zh51L0IUYsVx6XY8tfymNZ0jzOhLW4Q3qUM="
         }
       ]
     },
     {
-      "Route": "_framework/BookBuzz.pztdozjnum.wasm.gz",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\8ou15x0ogc-pztdozjnum.gz",
+      "Route": "_framework/BookBuzz.c7gdhmdabr.wasm.gz",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\8ou15x0ogc-c7gdhmdabr.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11377,7 +11079,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "21956"
+          "Value": "22248"
         },
         {
           "Name": "Content-Type",
@@ -11385,11 +11087,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w=\""
+          "Value": "\"ie+4Rh9Qae+jPhZdhP+bj8zVjSx1UXDehVr7JraF1XM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:50 GMT"
+          "Value": "Wed, 14 May 2025 18:44:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11407,7 +11109,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pztdozjnum"
+          "Value": "c7gdhmdabr"
         },
         {
           "Name": "label",
@@ -11415,7 +11117,305 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w="
+          "Value": "sha256-ie+4Rh9Qae+jPhZdhP+bj8zVjSx1UXDehVr7JraF1XM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BookBuzz.pdb",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BookBuzz.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38524"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"L8lf6pPOcATTzbNyJPbNjn2u+4IuXYfYqe3aPjUTabE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:44:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-L8lf6pPOcATTzbNyJPbNjn2u+4IuXYfYqe3aPjUTabE="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BookBuzz.pdb",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\kprvjgro1v-peck3u6xl0.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000035151856"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28447"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6ejednmfDgMiObnvYm8WGRNO2xzdEGATz4RMUyitduA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:44:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"L8lf6pPOcATTzbNyJPbNjn2u+4IuXYfYqe3aPjUTabE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-L8lf6pPOcATTzbNyJPbNjn2u+4IuXYfYqe3aPjUTabE="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BookBuzz.pdb.gz",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\kprvjgro1v-peck3u6xl0.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28447"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6ejednmfDgMiObnvYm8WGRNO2xzdEGATz4RMUyitduA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:44:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6ejednmfDgMiObnvYm8WGRNO2xzdEGATz4RMUyitduA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BookBuzz.peck3u6xl0.pdb",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\bin\\Debug\\net9.0\\wwwroot\\_framework\\BookBuzz.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38524"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"L8lf6pPOcATTzbNyJPbNjn2u+4IuXYfYqe3aPjUTabE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:44:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "peck3u6xl0"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/BookBuzz.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-L8lf6pPOcATTzbNyJPbNjn2u+4IuXYfYqe3aPjUTabE="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BookBuzz.peck3u6xl0.pdb",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\kprvjgro1v-peck3u6xl0.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000035151856"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28447"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6ejednmfDgMiObnvYm8WGRNO2xzdEGATz4RMUyitduA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:44:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"L8lf6pPOcATTzbNyJPbNjn2u+4IuXYfYqe3aPjUTabE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "peck3u6xl0"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/BookBuzz.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-L8lf6pPOcATTzbNyJPbNjn2u+4IuXYfYqe3aPjUTabE="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BookBuzz.peck3u6xl0.pdb.gz",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\kprvjgro1v-peck3u6xl0.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28447"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6ejednmfDgMiObnvYm8WGRNO2xzdEGATz4RMUyitduA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:44:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "peck3u6xl0"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/BookBuzz.pdb.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6ejednmfDgMiObnvYm8WGRNO2xzdEGATz4RMUyitduA="
         }
       ]
     },
@@ -11430,7 +11430,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "60181"
+          "Value": "61717"
         },
         {
           "Name": "Content-Type",
@@ -11438,11 +11438,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ=\""
+          "Value": "\"SKzQPwW8Zh51L0IUYsVx6XY8tfymNZ0jzOhLW4Q3qUM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:49 GMT"
+          "Value": "Wed, 14 May 2025 18:44:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11452,18 +11452,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ="
+          "Value": "sha256-SKzQPwW8Zh51L0IUYsVx6XY8tfymNZ0jzOhLW4Q3qUM="
         }
       ]
     },
     {
       "Route": "_framework/BookBuzz.wasm",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\8ou15x0ogc-pztdozjnum.gz",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\8ou15x0ogc-c7gdhmdabr.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000045543562"
+          "Quality": "0.000044945840"
         }
       ],
       "ResponseHeaders": [
@@ -11473,15 +11473,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "21956"
+          "Value": "22248"
         },
         {
           "Name": "ETag",
-          "Value": "\"4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w=\""
+          "Value": "\"ie+4Rh9Qae+jPhZdhP+bj8zVjSx1UXDehVr7JraF1XM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:50 GMT"
+          "Value": "Wed, 14 May 2025 18:44:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11501,19 +11501,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ=\""
+          "Value": "W/\"SKzQPwW8Zh51L0IUYsVx6XY8tfymNZ0jzOhLW4Q3qUM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ="
+          "Value": "sha256-SKzQPwW8Zh51L0IUYsVx6XY8tfymNZ0jzOhLW4Q3qUM="
         }
       ]
     },
     {
       "Route": "_framework/BookBuzz.wasm.gz",
-      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\8ou15x0ogc-pztdozjnum.gz",
+      "AssetFile": "D:\\Programmings\\Blazor\\BookBuzz\\obj\\Debug\\net9.0\\compressed\\8ou15x0ogc-c7gdhmdabr.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -11522,7 +11522,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "21956"
+          "Value": "22248"
         },
         {
           "Name": "Content-Type",
@@ -11530,11 +11530,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w=\""
+          "Value": "\"ie+4Rh9Qae+jPhZdhP+bj8zVjSx1UXDehVr7JraF1XM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:37:50 GMT"
+          "Value": "Wed, 14 May 2025 18:44:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11552,7 +11552,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w="
+          "Value": "sha256-ie+4Rh9Qae+jPhZdhP+bj8zVjSx1UXDehVr7JraF1XM="
         }
       ]
     },

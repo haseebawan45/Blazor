@@ -16,42 +16,42 @@
             <div class="col-md-4">
                 @if (!string.IsNullOrEmpty(Book.CoverImageUrl))
                 {
-                    <img src="@Book.CoverImageUrl" class="img-fluid rounded" alt="@Book.Title" 
+                    <img src="@Book.CoverImageUrl" class="img-fluid rounded shadow" alt="@Book.Title" 
                          style="max-height: 400px; width: 100%; object-fit: cover;"
-                         onerror="this.onerror=null; this.src='https://placehold.co/400x600/e9ecef/495057?text=@(Uri.EscapeDataString(Book.Title))'; this.alt='No image available';">
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x600/6c3483/ffffff?text=@(Uri.EscapeDataString(Book.Title))'; this.alt='No image available';">
                 }
                 else
                 {
-                    <div class="bg-secondary text-white d-flex align-items-center justify-content-center rounded" style="height: 400px;">
+                    <div class="bg-gradient bg-primary text-white d-flex align-items-center justify-content-center rounded shadow" style="height: 400px;">
                         <span>No Image</span>
                     </div>
                 }
             </div>
             <div class="col-md-8">
-                <h1>@Book.Title</h1>
-                <h4 class="text-muted">by @Book.Author</h4>
+                <h1 class="text-primary fw-bold">@Book.Title</h1>
+                <h4 class="text-info">by @Book.Author</h4>
                 <div class="mb-3">
-                    <span class="badge bg-primary">@Book.Genre</span>
+                    <span class="badge bg-success fs-6">@Book.Genre</span>
                 </div>
                 <div class="mb-3">
                     @for (int i = 1; i <= 5; i++)
                     {
                         if (i <= Math.Round(Book.AverageRating))
                         {
-                            <span class="text-warning fs-4">★</span>
+                            <span class="text-warning fs-4" style="color: #FFD700 !important;">★</span>
                         }
                         else
                         {
                             <span class="text-secondary fs-4">☆</span>
                         }
                     }
-                    <span class="ms-2">(@Book.AverageRating.ToString("F1")) - @Book.Reviews.Count reviews</span>
+                    <span class="ms-2 text-success fw-bold">(@Book.AverageRating.ToString("F1")) - @Book.Reviews.Count reviews</span>
                 </div>
                 <p class="lead">@Book.Description</p>
-                <button class="btn btn-primary" @onclick="() => ShowReviewForm = !ShowReviewForm">
+                <button class="btn btn-success shadow" style="background-color: #9b59b6;" @onclick="() => ShowReviewForm = !ShowReviewForm">
                     Write a Review
                 </button>
-                <a href="/" class="btn btn-secondary ms-2">Back to List</a>
+                <a href="/" class="btn btn-info text-white shadow ms-2">Back to List</a>
             </div>
         </div>
 
@@ -59,8 +59,8 @@
         {
             <div class="row mt-4">
                 <div class="col-md-8 offset-md-2">
-                    <div class="card">
-                        <div class="card-header">
+                    <div class="card shadow border-info">
+                        <div class="card-header bg-gradient bg-primary text-white">
                             <h5>Write a Review</h5>
                         </div>
                         <div class="card-body">
@@ -69,12 +69,12 @@
                                 <ValidationSummary />
 
                                 <div class="form-group mb-3">
-                                    <label for="reviewerName">Your Name:</label>
-                                    <InputText id="reviewerName" @bind-Value="NewReview.ReviewerName" class="form-control" />
+                                    <label for="reviewerName" class="text-primary fw-bold">Your Name:</label>
+                                    <InputText id="reviewerName" @bind-Value="NewReview.ReviewerName" class="form-control border-info" />
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <label>Rating:</label>
+                                    <label class="text-primary fw-bold">Rating:</label>
                                     <div>
                                         @for (int i = 1; i <= 5; i++)
                                         {
@@ -82,7 +82,7 @@
                                             <span class="fs-4 me-1" style="cursor: pointer;" @onclick="() => NewReview.Rating = currentRating">
                                                 @if (i <= NewReview.Rating)
                                                 {
-                                                    <span class="text-warning">★</span>
+                                                    <span style="color: #FFD700;">★</span>
                                                 }
                                                 else
                                                 {
@@ -95,12 +95,12 @@
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <label for="comment">Review:</label>
-                                    <InputTextArea id="comment" @bind-Value="NewReview.Comment" class="form-control" rows="4" />
+                                    <label for="comment" class="text-primary fw-bold">Review:</label>
+                                    <InputTextArea id="comment" @bind-Value="NewReview.Comment" class="form-control border-info" rows="4" />
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Submit Review</button>
-                                <button type="button" class="btn btn-secondary ms-2" @onclick="() => ShowReviewForm = false">Cancel</button>
+                                <button type="submit" class="btn text-white shadow" style="background-color: #9b59b6;">Submit Review</button>
+                                <button type="button" class="btn btn-info text-white shadow ms-2" @onclick="() => ShowReviewForm = false">Cancel</button>
                             </EditForm>
                         </div>
                     </div>
@@ -110,10 +110,10 @@
 
         <div class="row mt-4">
             <div class="col-md-12">
-                <h3>Reviews</h3>
+                <h3 class="text-primary fw-bold border-bottom border-2 border-info pb-2">Reviews</h3>
                 @if (!Book.Reviews.Any())
                 {
-                    <div class="alert alert-info">
+                    <div class="alert alert-info bg-gradient bg-info bg-opacity-25 border-info text-dark shadow">
                         No reviews yet. Be the first to review this book!
                     </div>
                 }
@@ -121,10 +121,10 @@
                 {
                     @foreach (var review in Book.Reviews)
                     {
-                        <div class="card mb-3">
-                            <div class="card-header d-flex justify-content-between">
+                        <div class="card mb-3 shadow border-info">
+                            <div class="card-header d-flex justify-content-between bg-info bg-opacity-25">
                                 <div>
-                                    <strong>@review.ReviewerName</strong>
+                                    <strong class="text-primary">@review.ReviewerName</strong>
                                     <span class="text-muted ms-2">@review.DateCreated.ToString("MMMM dd, yyyy")</span>
                                 </div>
                                 <div>
@@ -132,7 +132,7 @@
                                     {
                                         if (i <= review.Rating)
                                         {
-                                            <span class="text-warning">★</span>
+                                            <span style="color: #FFD700;">★</span>
                                         }
                                         else
                                         {
