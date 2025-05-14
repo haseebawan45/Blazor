@@ -1,0 +1,101 @@
+@page "/"
+@using BookBuzz.Models
+@using BookBuzz.Services
+@using BookBuzz.Filters
+@using BookBuzz.Components
+@inject IBookService BookService
+@inject IReviewService ReviewService
+@inject BookFilterService FilterService
+
+<h1>BookBuzz - Book Review App</h1>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <FilterPanel OnFilterApplied="@ApplyFilters" />
+    </div>
+</div>
+
+<div class="row">
+    @if (FilteredBooks == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        @foreach (var book in FilteredBooks)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    @if (!string.IsNullOrEmpty(book.CoverImageUrl))
+                    {
+                        <img src="@book.CoverImageUrl" class="card-img-top" alt="@book.Title" 
+                             style="height: 200px; object-fit: cover;"
+                             onerror="this.onerror=null; this.src='https://placehold.co/200x300/e9ecef/495057?text=@(Uri.EscapeDataString(book.Title))'; this.alt='No image available';">
+                    }
+                    else
+                    {
+                        <div class="card-img-top bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <span>No Image</span>
+                        </div>
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@book.Author</h6>
+                        <div class="mb-2">
+                            <span class="badge bg-primary">@book.Genre</span>
+                        </div>
+                        <div class="mb-2">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if (i <= Math.Round(book.AverageRating))
+                                {
+                                    <span class="text-warning">★</span>
+                                }
+                                else
+                                {
+                                    <span class="text-secondary">☆</span>
+                                }
+                            }
+                            <span class="ms-1">(@book.AverageRating.ToString("F1"))</span>
+                        </div>
+                        <p class="card-text">@(book.Description?.Length > 100 ? book.Description.Substring(0, 100) + "..." : book.Description)</p>
+                        <a href="/book/@book.Id" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+@code {
+    private List<Book> Books = new List<Book>();
+    private List<Book> FilteredBooks = new List<Book>();
+    private string SelectedGenre = string.Empty;
+    private double MinimumRating;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Books = await BookService.GetAllBooksAsync();
+        FilteredBooks = Books;
+    }
+
+    private void ApplyFilters((string genre, double rating) filterParams)
+    {
+        SelectedGenre = filterParams.genre;
+        MinimumRating = filterParams.rating;
+        
+        var filters = new List<IBookFilter>();
+        
+        if (!string.IsNullOrEmpty(filterParams.genre))
+        {
+            filters.Add(new GenreFilter(filterParams.genre));
+        }
+        
+        if (filterParams.rating > 0)
+        {
+            filters.Add(new RatingFilter(filterParams.rating));
+        }
+
+        FilteredBooks = FilterService.ApplyFilters(Books, filters);
+    }
+} 

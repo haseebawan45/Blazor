@@ -1,0 +1,92 @@
+@namespace BookBuzz.Components
+@using BookBuzz.Services
+@inject IBookService BookService
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h5 class="mb-0">Filter Books</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label for="genreSelect">Genre:</label>
+                    <select id="genreSelect" class="form-select" @bind="SelectedGenre">
+                        <option value="">All Genres</option>
+                        @foreach (var genre in Genres)
+                        {
+                            <option value="@genre">@genre</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label for="ratingSelect">Minimum Rating:</label>
+                    <select id="ratingSelect" class="form-select" @bind="MinimumRating">
+                        <option value="0">Any Rating</option>
+                        <option value="1">1+ Stars</option>
+                        <option value="2">2+ Stars</option>
+                        <option value="3">3+ Stars</option>
+                        <option value="4">4+ Stars</option>
+                        <option value="5">5 Stars</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-primary" @onclick="ApplyFilter">Apply Filters</button>
+                <button class="btn btn-secondary ms-2" @onclick="ResetFilters">Reset</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public EventCallback<string> OnGenreFilterChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<double> OnRatingFilterChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<(string genre, double rating)> OnFilterApplied { get; set; }
+
+    private string SelectedGenre { get; set; } = "";
+    private double MinimumRating { get; set; } = 0;
+    private List<string> Genres { get; set; } = new List<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Genres = await BookService.GetAllGenresAsync();
+    }
+
+    private async Task ApplyFilter()
+    {
+        if (OnFilterApplied.HasDelegate)
+        {
+            await OnFilterApplied.InvokeAsync((SelectedGenre, MinimumRating));
+        }
+        else
+        {
+            if (OnGenreFilterChanged.HasDelegate)
+            {
+                await OnGenreFilterChanged.InvokeAsync(SelectedGenre);
+            }
+
+            if (OnRatingFilterChanged.HasDelegate)
+            {
+                await OnRatingFilterChanged.InvokeAsync(MinimumRating);
+            }
+        }
+    }
+
+    private async Task ResetFilters()
+    {
+        SelectedGenre = "";
+        MinimumRating = 0;
+
+        await ApplyFilter();
+    }
+}

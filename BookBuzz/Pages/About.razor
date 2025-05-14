@@ -1,0 +1,89 @@
+@page "/about"
+
+<div class="container">
+    <h1 class="mb-4">About BookBuzz</h1>
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">A Book Review Application</h5>
+            <p class="card-text">
+                BookBuzz is a platform for book lovers to share reviews and rate their favorite books. This application
+                demonstrates the implementation of SOLID principles in a Blazor WebAssembly application.
+            </p>
+        </div>
+    </div>
+    
+    <h2 class="mb-3">SOLID Principles Implemented</h2>
+    
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header bg-primary text-white">
+                    Single Responsibility Principle (SRP)
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Each class has only one responsibility:
+                        <ul>
+                            <li><strong>BookService</strong>: Handles only book operations</li>
+                            <li><strong>ReviewService</strong>: Handles only review operations</li>
+                            <li><strong>Book and Review models</strong>: Each contains only relevant properties</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header bg-success text-white">
+                    Open/Closed Principle (OCP)
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        The filter system is designed so new filters can be added without modifying existing code:
+                        <ul>
+                            <li><strong>IBookFilter</strong>: Interface for all filters</li>
+                            <li><strong>GenreFilter, RatingFilter</strong>: Concrete implementations</li>
+                            <li><strong>BookFilterService</strong>: Applies any combination of filters</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header bg-info text-white">
+                    Interface Segregation Principle (ISP)
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Clients depend only on interfaces relevant to them:
+                        <ul>
+                            <li><strong>IBookService</strong>: Contains only book-related operations</li>
+                            <li><strong>IReviewService</strong>: Contains only review-related operations</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header bg-warning text-dark">
+                    Dependency Inversion Principle (DIP)
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        High-level modules depend on abstractions, not concrete implementations:
+                        <ul>
+                            <li><strong>ReviewService</strong>: Depends on IBookService, not BookService</li>
+                            <li><strong>Components</strong>: Depend on service interfaces, not implementations</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
