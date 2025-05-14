@@ -301,8 +301,8 @@
       ]
     },
     {
-      "Route": "_framework/BookBuzz.lxhpmk94bt.wasm",
-      "AssetFile": "_framework/BookBuzz.lxhpmk94bt.wasm",
+      "Route": "_framework/BookBuzz.d377xd2n5j.pdb",
+      "AssetFile": "_framework/BookBuzz.d377xd2n5j.pdb",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -315,168 +315,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "60181"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"96JFVd1djEuI2Rk0P9WdjCNiPVxqFrLrKVrevm08wp0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:54 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "lxhpmk94bt"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-96JFVd1djEuI2Rk0P9WdjCNiPVxqFrLrKVrevm08wp0="
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/BookBuzz.wasm"
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.lxhpmk94bt.wasm",
-      "AssetFile": "_framework/BookBuzz.lxhpmk94bt.wasm.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000045415323"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22018"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"38UZa36UC8Mv+5MbfgHKRiyqC+e5bxn5hUs4Qo+tBUg=\""
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"96JFVd1djEuI2Rk0P9WdjCNiPVxqFrLrKVrevm08wp0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:55 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "lxhpmk94bt"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-96JFVd1djEuI2Rk0P9WdjCNiPVxqFrLrKVrevm08wp0="
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/BookBuzz.wasm"
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.lxhpmk94bt.wasm.gz",
-      "AssetFile": "_framework/BookBuzz.lxhpmk94bt.wasm.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22018"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"38UZa36UC8Mv+5MbfgHKRiyqC+e5bxn5hUs4Qo+tBUg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:55 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "lxhpmk94bt"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-38UZa36UC8Mv+5MbfgHKRiyqC+e5bxn5hUs4Qo+tBUg="
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/BookBuzz.wasm.gz"
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.pdb",
-      "AssetFile": "_framework/BookBuzz.pwb9bidr2h.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "38236"
+          "Value": "38152"
         },
         {
           "Name": "Content-Type",
@@ -484,158 +323,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"iacqbd4wri94LiSMreyBpCk8I4fDxtRjnHW5IkH4LDc=\""
+          "Value": "\"qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:54 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-iacqbd4wri94LiSMreyBpCk8I4fDxtRjnHW5IkH4LDc="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.pdb",
-      "AssetFile": "_framework/BookBuzz.pwb9bidr2h.pdb.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000035545445"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "28132"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"idXpU9waYrx8sG749d9v7/2aCtP+D+7XPisbAhoY1ts=\""
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"iacqbd4wri94LiSMreyBpCk8I4fDxtRjnHW5IkH4LDc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:55 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-iacqbd4wri94LiSMreyBpCk8I4fDxtRjnHW5IkH4LDc="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.pdb.gz",
-      "AssetFile": "_framework/BookBuzz.pwb9bidr2h.pdb.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "28132"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"idXpU9waYrx8sG749d9v7/2aCtP+D+7XPisbAhoY1ts=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:55 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-idXpU9waYrx8sG749d9v7/2aCtP+D+7XPisbAhoY1ts="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/BookBuzz.pwb9bidr2h.pdb",
-      "AssetFile": "_framework/BookBuzz.pwb9bidr2h.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "38236"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"iacqbd4wri94LiSMreyBpCk8I4fDxtRjnHW5IkH4LDc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:54 GMT"
+          "Value": "Wed, 14 May 2025 18:37:48 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pwb9bidr2h"
+          "Value": "d377xd2n5j"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-iacqbd4wri94LiSMreyBpCk8I4fDxtRjnHW5IkH4LDc="
+          "Value": "sha256-qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw="
         },
         {
           "Name": "label",
@@ -644,13 +346,13 @@
       ]
     },
     {
-      "Route": "_framework/BookBuzz.pwb9bidr2h.pdb",
-      "AssetFile": "_framework/BookBuzz.pwb9bidr2h.pdb.gz",
+      "Route": "_framework/BookBuzz.d377xd2n5j.pdb",
+      "AssetFile": "_framework/BookBuzz.d377xd2n5j.pdb.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000035545445"
+          "Quality": "0.000035627761"
         }
       ],
       "ResponseHeaders": [
@@ -668,7 +370,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "28132"
+          "Value": "28067"
         },
         {
           "Name": "Content-Type",
@@ -676,15 +378,15 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"idXpU9waYrx8sG749d9v7/2aCtP+D+7XPisbAhoY1ts=\""
+          "Value": "\"ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4=\""
         },
         {
           "Name": "ETag",
-          "Value": "W/\"iacqbd4wri94LiSMreyBpCk8I4fDxtRjnHW5IkH4LDc=\""
+          "Value": "W/\"qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:55 GMT"
+          "Value": "Wed, 14 May 2025 18:37:50 GMT"
         },
         {
           "Name": "Vary",
@@ -694,11 +396,11 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pwb9bidr2h"
+          "Value": "d377xd2n5j"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-iacqbd4wri94LiSMreyBpCk8I4fDxtRjnHW5IkH4LDc="
+          "Value": "sha256-qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw="
         },
         {
           "Name": "label",
@@ -707,8 +409,8 @@
       ]
     },
     {
-      "Route": "_framework/BookBuzz.pwb9bidr2h.pdb.gz",
-      "AssetFile": "_framework/BookBuzz.pwb9bidr2h.pdb.gz",
+      "Route": "_framework/BookBuzz.d377xd2n5j.pdb.gz",
+      "AssetFile": "_framework/BookBuzz.d377xd2n5j.pdb.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -725,7 +427,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "28132"
+          "Value": "28067"
         },
         {
           "Name": "Content-Type",
@@ -733,11 +435,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"idXpU9waYrx8sG749d9v7/2aCtP+D+7XPisbAhoY1ts=\""
+          "Value": "\"ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:55 GMT"
+          "Value": "Wed, 14 May 2025 18:37:50 GMT"
         },
         {
           "Name": "Vary",
@@ -747,11 +449,11 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pwb9bidr2h"
+          "Value": "d377xd2n5j"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-idXpU9waYrx8sG749d9v7/2aCtP+D+7XPisbAhoY1ts="
+          "Value": "sha256-ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4="
         },
         {
           "Name": "label",
@@ -760,8 +462,306 @@
       ]
     },
     {
+      "Route": "_framework/BookBuzz.pdb",
+      "AssetFile": "_framework/BookBuzz.d377xd2n5j.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38152"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:37:48 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BookBuzz.pdb",
+      "AssetFile": "_framework/BookBuzz.d377xd2n5j.pdb.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000035627761"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28067"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:37:50 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qRQ0tIW6aQc3mJvZdlE69IpNPZkbjdRlSdCnyAa4JMw="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BookBuzz.pdb.gz",
+      "AssetFile": "_framework/BookBuzz.d377xd2n5j.pdb.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28067"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:37:50 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZWgxGHS20kj/Zd2sWzEZVvILTECAdSCS+kbJBleOkz4="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BookBuzz.pztdozjnum.wasm",
+      "AssetFile": "_framework/BookBuzz.pztdozjnum.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "60181"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:37:49 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pztdozjnum"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ="
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/BookBuzz.wasm"
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BookBuzz.pztdozjnum.wasm",
+      "AssetFile": "_framework/BookBuzz.pztdozjnum.wasm.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000045543562"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21956"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:37:50 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pztdozjnum"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ="
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/BookBuzz.wasm"
+        }
+      ]
+    },
+    {
+      "Route": "_framework/BookBuzz.pztdozjnum.wasm.gz",
+      "AssetFile": "_framework/BookBuzz.pztdozjnum.wasm.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21956"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 18:37:50 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pztdozjnum"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w="
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/BookBuzz.wasm.gz"
+        }
+      ]
+    },
+    {
       "Route": "_framework/BookBuzz.wasm",
-      "AssetFile": "_framework/BookBuzz.lxhpmk94bt.wasm",
+      "AssetFile": "_framework/BookBuzz.pztdozjnum.wasm",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -782,28 +782,28 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"96JFVd1djEuI2Rk0P9WdjCNiPVxqFrLrKVrevm08wp0=\""
+          "Value": "\"FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:54 GMT"
+          "Value": "Wed, 14 May 2025 18:37:49 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-96JFVd1djEuI2Rk0P9WdjCNiPVxqFrLrKVrevm08wp0="
+          "Value": "sha256-FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ="
         }
       ]
     },
     {
       "Route": "_framework/BookBuzz.wasm",
-      "AssetFile": "_framework/BookBuzz.lxhpmk94bt.wasm.gz",
+      "AssetFile": "_framework/BookBuzz.pztdozjnum.wasm.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000045415323"
+          "Quality": "0.000045543562"
         }
       ],
       "ResponseHeaders": [
@@ -821,7 +821,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22018"
+          "Value": "21956"
         },
         {
           "Name": "Content-Type",
@@ -829,15 +829,15 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"38UZa36UC8Mv+5MbfgHKRiyqC+e5bxn5hUs4Qo+tBUg=\""
+          "Value": "\"4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w=\""
         },
         {
           "Name": "ETag",
-          "Value": "W/\"96JFVd1djEuI2Rk0P9WdjCNiPVxqFrLrKVrevm08wp0=\""
+          "Value": "W/\"FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:55 GMT"
+          "Value": "Wed, 14 May 2025 18:37:50 GMT"
         },
         {
           "Name": "Vary",
@@ -847,13 +847,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-96JFVd1djEuI2Rk0P9WdjCNiPVxqFrLrKVrevm08wp0="
+          "Value": "sha256-FU0xe/53zBhFRdPMMm8nRwafLfJYSguom7MZHl+VFpQ="
         }
       ]
     },
     {
       "Route": "_framework/BookBuzz.wasm.gz",
-      "AssetFile": "_framework/BookBuzz.lxhpmk94bt.wasm.gz",
+      "AssetFile": "_framework/BookBuzz.pztdozjnum.wasm.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -870,7 +870,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22018"
+          "Value": "21956"
         },
         {
           "Name": "Content-Type",
@@ -878,11 +878,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"38UZa36UC8Mv+5MbfgHKRiyqC+e5bxn5hUs4Qo+tBUg=\""
+          "Value": "\"4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:20:55 GMT"
+          "Value": "Wed, 14 May 2025 18:37:50 GMT"
         },
         {
           "Name": "Vary",
@@ -892,7 +892,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-38UZa36UC8Mv+5MbfgHKRiyqC+e5bxn5hUs4Qo+tBUg="
+          "Value": "sha256-4hMMykyTuG1+xN9fIbwzeKahEJIFxygxV6VODSZHu/w="
         }
       ]
     },
@@ -57241,17 +57241,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eKkUpcZvYHVWfCPBO+l9mYkU62CIdPUI0CSpGkXFgcA=\""
+          "Value": "\"uqKYHGmtlqrH+ZCV9nBdU64rQywYK9pnxb9nHY4neyA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:31:02 GMT"
+          "Value": "Wed, 14 May 2025 18:37:50 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-eKkUpcZvYHVWfCPBO+l9mYkU62CIdPUI0CSpGkXFgcA="
+          "Value": "sha256-uqKYHGmtlqrH+ZCV9nBdU64rQywYK9pnxb9nHY4neyA="
         }
       ]
     },
@@ -57262,7 +57262,7 @@
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000081254571"
+          "Quality": "0.000081214976"
         }
       ],
       "ResponseHeaders": [
@@ -57280,7 +57280,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12306"
+          "Value": "12312"
         },
         {
           "Name": "Content-Type",
@@ -57288,15 +57288,15 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3btUTEoJu971f54UjG9B1XGUFH8ZbyjkcrDSXLBA9KU=\""
+          "Value": "\"jTfwdYQ6/JW4Fdn8WAL+zwHdamce8Yv6cP8flX8vCZE=\""
         },
         {
           "Name": "ETag",
-          "Value": "W/\"eKkUpcZvYHVWfCPBO+l9mYkU62CIdPUI0CSpGkXFgcA=\""
+          "Value": "W/\"uqKYHGmtlqrH+ZCV9nBdU64rQywYK9pnxb9nHY4neyA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:21:01 GMT"
+          "Value": "Wed, 14 May 2025 18:31:02 GMT"
         },
         {
           "Name": "Vary",
@@ -57306,7 +57306,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-eKkUpcZvYHVWfCPBO+l9mYkU62CIdPUI0CSpGkXFgcA="
+          "Value": "sha256-uqKYHGmtlqrH+ZCV9nBdU64rQywYK9pnxb9nHY4neyA="
         }
       ]
     },
@@ -57329,7 +57329,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12306"
+          "Value": "12312"
         },
         {
           "Name": "Content-Type",
@@ -57337,11 +57337,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3btUTEoJu971f54UjG9B1XGUFH8ZbyjkcrDSXLBA9KU=\""
+          "Value": "\"jTfwdYQ6/JW4Fdn8WAL+zwHdamce8Yv6cP8flX8vCZE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 13:21:01 GMT"
+          "Value": "Wed, 14 May 2025 18:31:02 GMT"
         },
         {
           "Name": "Vary",
@@ -57351,7 +57351,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-3btUTEoJu971f54UjG9B1XGUFH8ZbyjkcrDSXLBA9KU="
+          "Value": "sha256-jTfwdYQ6/JW4Fdn8WAL+zwHdamce8Yv6cP8flX8vCZE="
         }
       ]
     },
